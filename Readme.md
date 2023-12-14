@@ -1,8 +1,8 @@
-# [Your] Portfolio
+# Dinesh Sutihar Portfolio 
 
 ## Introduction
 
-Hello! I'm [Your Name], a [Your Job Title] based in [Your Location]. This is my portfolio website where I showcase my projects and skills.
+Hello! I'm Dinesh Suthihar, an IT student. This is my portfolio website's readme where I showcase my projects and skills.
 
 ## Projects
 
@@ -33,8 +33,8 @@ List your skills here. For example:
 
 If you'd like to get in touch, you can reach me at:
 
-- Email: [Your Email]
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
+- Email: dineshsutihar9@gmail.com
+- LinkedIn: @dineshsutihar
+- GitHub: @dineshsutihar
 
 Thank you for visiting my portfolio!
