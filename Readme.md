@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hello! I'm Dinesh Suthihar, an IT student. This is my portfolio website's readme where I showcase my projects and skills.
+Hello! I'm Dinesh Suthihar, an IT student. This is my portfolio website's readme where I showcase my projects and skills. I have build this website using React, GSAP, telwind css, and many more technologies.
 
 ## Projects
 
