@@ -1,2 +1,0 @@
-# dineshsutihar.github.io
-Portfolio
