@@ -25,29 +25,30 @@ I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic
 ---
 
 ### 🛠 &nbsp;Languages and Tools :
-<p align="center">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original-wordmark.svg" alt="Java" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain-wordmark.svg" alt="CSS3" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="NodeJS" width="40" height="40"/>&nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original-wordmark.svg" alt="Git" width="40" height="40"/>&nbsp;
-</p>
+<div align="center">
+
+![Skills](https://skills.thijs.gg/icons?i=js,html,css,tailwind) 
+
+![Skills](https://skills.thijs.gg/icons?i=git,github,react,nodejs,docker)
+
+![Skills](https://skills.thijs.gg/icons?i=java,c,py,matlab,mysql)
+
+![Skills](https://skills.thijs.gg/icons?i=ps,figma,ai,pr)
+</div>
+
 
 ---
 
 ### 🔥 &nbsp; My Stats :
 <p align="center">
     <a href="https://git.io/streak-stats">
-        <img src="http://github-readme-streak-stats.herokuapp.com?user=dineshsutihar&theme=dark&background=000000" alt="GitHub Streak Stats">
+        <img src="http://github-readme-streak-stats.herokuapp.com?user=dineshsutihar&theme=dark&background=000000&border=white" alt="GitHub Streak Stats">
     </a>
 </p>
 
 <p align="center">
     <a href="https://github.com/anuraghazra/github-readme-stats">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dineshsutihar&layout=compact&theme=vision-friendly-dark" alt="Top Langs">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dineshsutihar&layout=compact&theme=vision-friendly-dark&border=white" alt="Top Langs">
     </a>
 </p>
 ---
