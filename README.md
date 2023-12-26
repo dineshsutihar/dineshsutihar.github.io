@@ -8,7 +8,7 @@
 
 <h1 align="center">Welcome to my profile, dear visitor!<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="40"></h1>
 
-<p align="center"><img src="https://media.giphy.com/media/dWesBcTLavkZuG35MI/giphy.gif" width="600" height="300"  /></p>
+<p align="center"><img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="600" height="300"  /></p>
 
 # About Me :
 
@@ -51,4 +51,4 @@ I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dineshsutihar&layout=compact&theme=vision-friendly-dark&border=white" alt="Top Langs">
     </a>
 </p>
----
+
