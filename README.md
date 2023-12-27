@@ -10,7 +10,7 @@
 
 # About Me :
 
-I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic Designer** from Nepal.
+I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic Designer**.
 
 - 🎓 I am pursuing my bachelor's degree in computer science and engineering.
 - 💻 I am passionate about creating beautiful and functional web applications using HTML, CSS, JavaScript, and React.
@@ -40,13 +40,14 @@ I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic
 ### 🔥 &nbsp; My Stats :
 <p align="center">
     <a href="https://git.io/streak-stats">
-        <img src="http://github-readme-streak-stats.herokuapp.com?user=dineshsutihar&theme=dark&background=000000&border=white" alt="Streak Stats">
+        <img src="http://github-readme-streak-stats.herokuapp.com?user=dineshsutihar&theme=dark&background=000000&border=white&rand=${Math.random()}" alt="Streak Stats">
     </a>
 </p>
 
 <p align="center">
     <a href="https://github.com/anuraghazra/github-readme-stats">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dineshsutihar&layout=compact&theme=vision-friendly-dark&border=white" alt="Top Langs">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dineshsutihar&layout=compact&theme=vision-friendly-dark&border=white&rand=${Math.random()}" alt="Top Langs">
     </a>
+</p>
 </p>
 
