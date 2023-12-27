@@ -17,7 +17,7 @@ I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic
 - 💻 I am passionate about creating beautiful and functional web applications using HTML, CSS, JavaScript, and React.
 -  🎨 I am also a graphic designer who loves to create stunning visuals and logos using tools like Photoshop and Illustrator.
 - 🧠 I enjoy challenging myself with problem-solving on platforms like LeetCode, HackerRank, HackerEarth, and CodeChef.
-- ✍️ I also learn new skill in my free time.
+- ✍️ I also learn new skills in my free time.
 - 📧 You can contact me via email at [dineshsutihar9@gmail.com](mailto:dineshsutihar9@gmail.com) or connect with me on LinkedIn:  [![Linkedin Badge](https://img.shields.io/badge/-dineshsutihar-blue?style=flat&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/dineshsutihar)
 
 
@@ -41,7 +41,7 @@ I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic
 ### 🔥 &nbsp; My Stats :
 <p align="center">
     <a href="https://git.io/streak-stats">
-        <img src="http://github-readme-streak-stats.herokuapp.com?user=dineshsutihar&theme=dark&background=000000&border=white" alt="GitHub Streak Stats">
+        <img src="http://github-readme-streak-stats.herokuapp.com?user=dineshsutihar&theme=dark&background=000000&border=white" alt="Streak Stats">
     </a>
 </p>
 
