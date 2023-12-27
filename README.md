@@ -10,7 +10,7 @@
 
 # About Me :
 
-I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic Designer** from Nepal.
+I am a **Student**, **Frontend Developer**, **Software Engineer**, and **Graphic Designer**.
 
 - 🎓 I am pursuing my bachelor's degree in computer science and engineering.
 - 💻 I am passionate about creating beautiful and functional web applications using HTML, CSS, JavaScript, and React.
