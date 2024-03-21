@@ -93,7 +93,7 @@ html,body{
     align-items: end;
     /* background-color: red; */
     width: fit-content;
-    margin-left: 7vw;
+    margin-left: 13vw;
 }
 .blocktext h5{
     /* background-color: yellow; */
@@ -154,10 +154,17 @@ html,body{
 #second{
     color: white;
     padding-top: 200px;
-    width: 100%;
+    width: 93%;
     height: auto;
     background-color: black;
+    padding: 0 2vw;
 
+
+}
+
+#second a{
+    color: #fff;
+    text-decoration: none;
 }
 
 .element{
@@ -167,7 +174,8 @@ html,body{
     justify-content: space-between;
     width: 100%;
     border-top: 1px solid #888;
-    padding: 3.5vw 3vw;
+    padding: 3.5vw 0 3.5vw 0;
+    
 }
 
 .element h1{
@@ -178,9 +186,14 @@ html,body{
 .elementlast{
     border-bottom: 1px solid #888;
 }
+.elementfirst{
+    height: 200px;
+    border-top: none;
+}
 
 .element img{
    display: none;
+   /* opacity: 0; */
     height: 130%;
     z-index: 999;
     position: absolute;
@@ -189,12 +202,12 @@ html,body{
 #about{
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content:center;
     gap: 50px;
     padding: 10vw 10vw;
-    padding-left: 40vw;
+    /* padding-left: 40vw; */
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     background: #000;
     color: #fff;
     
@@ -209,7 +222,7 @@ html,body{
 } */
 
 #textabout{
-    width: 25rem;
+    width: 35rem;
     /* height: fit-content; */
 }
 
@@ -234,7 +247,8 @@ html,body{
     text-decoration: none;
 }
 #about img{
-    width: 240px;
+    margin-right: 8rem;
+    width: 270px;
 }
 
 #subscribe{
@@ -261,11 +275,16 @@ html,body{
     justify-content: space-between;
     padding: 40px 30px;
     color: #fff;
+    width: 100%;
+    /* height: 10vh; */
+    /* background-color: #ff0000; */
 }
 
 #footerleft{
     display: flex;
     gap: 20px;
+
+  
 }
 
 #footerright{
@@ -279,4 +298,20 @@ html,body{
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
+}
+
+
+
+
+/* code for preloader */
+
+#preloader{
+    position: fixed;
+    
+    width: 100%;
+    height: 100vh;
+    background: #15191F url(images/preloader.gif) no-repeat center center;
+    background-size: 40%;
+    z-index: 99999;
+    
 }
