@@ -315,3 +315,33 @@ html,body{
     z-index: 99999;
     
 }
+
+
+/* For Smaller Devices */
+@media only screen and (max-width: 600px) {
+    #hero{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content:space-between;
+        height: 100dvh;
+        
+    }
+    #hero>:nth-child(2){
+        width: 100%;
+        height: 30%;
+    }
+    #hero>:nth-child(3){
+        border: 1px solid red;
+        padding: 30%;
+    }
+    /* #hero>:last-child{
+        display: flex; 
+        flex-direction: column;
+
+    } */
+
+    #minicircle{
+        display: none;
+    }
+}
