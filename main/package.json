@@ -11,7 +11,6 @@
   "dependencies": {
     "@react-three/drei": "^9.109.5",
     "@react-three/fiber": "^8.16.8",
-    "@sentry/nextjs": "^8.24.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.21",
     "mini-svg-data-uri": "^1.4.4",
