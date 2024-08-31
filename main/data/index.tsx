@@ -1,3 +1,5 @@
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
@@ -201,6 +203,8 @@ export const workExperience = [
     },
 ];
 
+
+//TODO: remove after removing the old footer
 export const socialMedia = [
     {
         id: 1,
@@ -215,3 +219,24 @@ export const socialMedia = [
         img: "/link.svg",
     },
 ];
+
+export const contactMethods = [
+    {
+        icon: <FaLinkedin />,
+        title: "Connect on LinkedIn",
+        desc: "Stay up-to-date with my professional journey.",
+        link: {
+            name: "Connect with me",
+            href: "https://www.linkedin.com/in/dineshsutihar/"
+        },
+    },
+    {
+        icon: <FaTwitter />,
+        title: "Follow on Twitter",
+        desc: "Got a question or just want to say hi? Send me a tweet.",
+        link: {
+            name: "Send me a DM",
+            href: "https://x.com/Dineshsutihar"
+        },
+    }
+]
