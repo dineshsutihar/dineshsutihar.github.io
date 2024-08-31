@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
 import Lottie from "react-lottie";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
@@ -67,6 +67,14 @@ export const BentoGridItem = ({
             document.body.removeChild(textArea);
         }
     }, [])
+
+    useEffect(() => {
+        if (copied) {
+            setTimeout(() => {
+                setCopied(false)
+            }, 2000)
+        }
+    }, [copied])
 
     return (
         <div
