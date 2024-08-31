@@ -7,7 +7,7 @@ import { BackgroundBeamsWithCollision } from './ui/BackgroundBeamsWithCollision'
 
 const Hero = () => {
     return (
-        <div className='pb-20 pt-36 lg:pt-44 lg:h-[90vh]'>
+        <div className='pb-20 pt-48 h-[90vh]'>
             <div>
                 <Spotlight className='-top-40 -left-10 md:-left-31 md:-top-20 h-screen' fill='white' />
                 <Spotlight className='top-10 left-full h-[80vh] w-[50vw] ' fill='purple' />
