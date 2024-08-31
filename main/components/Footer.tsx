@@ -1,35 +1,58 @@
-import { FaLocationArrow } from "react-icons/fa";
-import MagicButton from "./ui/MagicButton";
-import { socialMedia } from "@/data";
-import Image from "next/image";
+import Image from "next/image"
+import { FaFacebookF, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
+import { FaX } from "react-icons/fa6"
 
-const Footer = () => {
+export default function Footer() {
+
     return (
-        <footer className="w-full mb-[100px] md:mb-5 pb-10" id="contact">
-            <div className="flex flex-col items-center">
-                <h1 className="heading lg:max-w-[45vw]">Ready to take <span className="text-purple">your</span> digital presence to the next level?</h1>
-                <p className="text-white-200 md:mt-10 my-5 text-center">Reach out to me today and let&apos;s discuss how I can help you achieve your goals.</p>
-                <a href="mailto:contact@dineshsutihar.me">
-                    <MagicButton
-                        title="Let's get in touch"
-                        icon={<FaLocationArrow />}
-                        position="right"
-                    />
-                </a>
+        <footer className="text-gray-300  px-4 py-5 max-w-screen-xl mx-automd:px-8">
+            <div className="max-w-lg sm:mx-auto sm:text-center">
+                <Image height={100} width={100} src="/Logo-White.svg" alt="Logo" className="w-32 sm:mx-auto" />
+                <p className="leading-relaxed mt-2 text-[15px]">
+                    If you find any bugs or have any suggestions, feel free to reach out to me on any of the platforms below.
+                </p>
             </div>
-            <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-                <p className="md:text-base text-sm md:font-normal font-light">Copyright &copy; 2024 Dinesh</p>
-                <div className="flex items-center md:gap-3 gap-6 ">
-                    {socialMedia.map((profile) => (
-                        <div key={profile.id} className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 ">
-                            <Image src={profile.img} alt={profile.img} width={20} height={20} />
 
-                        </div>
-                    ))}
+            <div className="mt-8 items-center justify-between sm:flex">
+                <div className="mt-4 sm:mt-0">
+                    &copy; 2024 Dinesh Sutihar All rights reserved.
+                </div>
+                <div className="mt-6 sm:mt-0">
+                    <ul className="flex items-center space-x-4">
+                        <li className="w-10 h-10 cursor-pointer hover:bg-white-100 border rounded-full flex items-center justify-center">
+                            <a href="https://github.com/dineshsutihar">
+                                <FaGithub className="text-blue-500" />
+                            </a>
+                        </li>
+
+                        <li className="w-10 h-10 cursor-pointer hover:bg-white-100 border rounded-full flex items-center justify-center">
+                            <a href="https://x.com/dineshsutihar/">
+                                <FaX className="text-blue-500" />
+                            </a>
+                        </li>
+
+                        <li className="w-10 h-10 cursor-pointer hover:bg-white-100 border rounded-full flex items-center justify-center">
+                            <a href="https://www.linkedin.com/in/dineshsutihar/">
+                                <FaLinkedin className="text-blue-500" />
+                            </a>
+                        </li>
+
+                        <li className="w-10 h-10 cursor-pointer hover:bg-white-100 border rounded-full flex items-center justify-center">
+                            <a href="https://instagram.com/dineshsutihar/">
+                                <FaInstagram className="text-blue-500" />
+                            </a>
+                        </li>
+                        <li className="w-10 h-10 cursor-pointer hover:bg-white-100 border rounded-full flex items-center justify-center">
+                            <a href="https://facebook.com/sutihar.dinesh/">
+                                <FaFacebookF className="text-blue-500" />
+                            </a>
+                        </li>
+
+
+                    </ul>
                 </div>
             </div>
+
         </footer>
     )
 }
-
-export default Footer; 
