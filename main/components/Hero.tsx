@@ -3,10 +3,11 @@ import { Spotlight } from './ui/Spotlight'
 import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import MagicButton from './ui/MagicButton'
 import { FaLocationArrow } from 'react-icons/fa'
+import { BackgroundBeamsWithCollision } from './ui/BackgroundBeamsWithCollision'
 
 const Hero = () => {
     return (
-        <div className='pb-20 pt-36 h-screen'>
+        <div className='pb-20 pt-36 '>
             <div>
                 <Spotlight className='-top-40 -left-10 md:-left-31 md:-top-20 h-screen' fill='white' />
                 <Spotlight className='top-10 left-full h-[80vh] w-[50vw] ' fill='purple' />
@@ -31,6 +32,7 @@ const Hero = () => {
                     </a>
                 </div>
             </div>
+
         </div>
     )
 }

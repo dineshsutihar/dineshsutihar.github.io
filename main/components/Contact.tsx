@@ -1,11 +1,11 @@
 import { contactMethods } from "@/data/index";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
-import Image from "next/image";
+
 
 export default function Contact() {
     return (
-        <section className="py-14 h-[50vh]">
+        <section className="py-14 lg:h-[50vh] sm:h-auto">
             <div className="max-w-screen-xl mx-auto px-4 text-gray-400 gap-12 md:px-8 lg:flex">
                 <div className="max-w-md">
                     <h3 className="text-gray-100 text-3xl font-semibold sm:text-4xl">
