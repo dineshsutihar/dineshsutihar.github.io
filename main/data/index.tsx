@@ -1,4 +1,6 @@
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaCss3, FaHtml5, FaLinkedin, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
+import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
+import { SiAuth0, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiPostcss, SiPostgresql, SiRender, SiTailwindcss, SiVercel } from "react-icons/si";
 
 export const navItems = [
     { name: "About", link: "#about" },
@@ -74,35 +76,35 @@ export const gridItems = [
 export const projects = [
     {
         id: 1,
-        title: "3D Solar System Planets to Explore",
-        des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-        img: "/p1.svg",
-        iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-        link: "/ui.earth.com",
+        title: "Clarity Crunch - Text Summarization",
+        des: "A text summarization tool that uses AI to summarize articles, essays, and other long-form content.",
+        img: "https://github.com/dineshsutihar/ClarityCrunch/raw/main/public/images/DocsImage.png",
+        iconLists: [<FaHtml5 />, <FaCss3 />, <SiExpress />, <FaNodeJs />, <SiHuggingface />],
+        link: "https://clarity.dineshsutihar.me/",
     },
     {
         id: 2,
-        title: "Yoom - Video Conferencing App",
-        des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-        img: "/p2.svg",
-        iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-        link: "/ui.yoom.com",
+        title: "Space Tourism Multipage",
+        des: "A multipage website for a space tourism company, with a focus on modern design and smooth animations.",
+        img: "https://github.com/dineshsutihar/space-tourism-multipage/blob/main/Design/index.jpg?raw=true",
+        iconLists: [<RiJavascriptLine />, <FaHtml5 />, <FaCss3 />],
+        link: "/space-tourism-multipage/",
     },
     {
         id: 3,
-        title: "AI Image SaaS - Canva Application",
-        des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-        img: "/p3.svg",
-        iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-        link: "/ui.aiimg.com",
+        title: "Next-Dashboard",
+        des: "A responsive dashboard template for Next.js, featuring a modern design and reusable components.",
+        img: "/dashboard.png",
+        iconLists: [<RiNextjsLine />, <SiPostgresql />, <SiVercel />, <SiAuth0 />, <FaReact />, , <SiTailwindcss />],
+        link: "https://next-dashboard.dineshsutihar.me/",
     },
     {
         id: 4,
-        title: "Animated Apple Iphone 3D Website",
-        des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-        img: "/p4.svg",
-        iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-        link: "/ui.apple.com",
+        title: "OrganizeIt - Fullstack Todo App",
+        des: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and also dockerized for easy deployment.",
+        img: "https://github.com/dineshsutihar/todo-fullstack/blob/main/design/design.png?raw=true",
+        iconLists: [<RiNextjsLine />, <SiMongodb />, <SiMongoose />, <SiVercel />, <SiRender />, <SiTailwindcss />, <SiDocker />],
+        link: "https://organizeit.dineshsutihar.me",
     },
 ];
 
