@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
 import Lottie from "react-lottie";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import animationData from '@/data/confetti.json'
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
@@ -46,10 +46,27 @@ export const BentoGridItem = ({
     spareImg?: string;
 }) => {
     const [copied, setCopied] = useState(false)
-    const handleCopy = () => {
-        navigator.clipboard.writeText('dineshsutihar9@gmail.com');
-        setCopied(true);
-    }
+    const handleCopy = useCallback(() => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText('dineshsutihar9@gmail.com').then(() => {
+                setCopied(true);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = 'dineshsutihar9@gmail.com';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                setCopied(true);
+            } catch (err) {
+                console.error('Failed to copy using execCommand: ', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    }, [])
 
     return (
         <div
