@@ -52,13 +52,13 @@ export const FloatingNav = ({
                     <nav className="hidden md:block">
                         <ul className="flex space-x-6">
                             {navItems.map((navItem: any, idx: number) => (
-                                <li><Link
-                                    key={`link=${idx}`}
-                                    href={navItem.link}
-                                    className="hover:text-blue-400 transition duration-300"
-                                >
-                                    <span className="text-sm !cursor-pointer">{navItem.name}</span>
-                                </Link>
+                                <li key={`link=${idx}`}>
+                                    <Link
+                                        href={navItem.link}
+                                        className="hover:text-blue-400 transition duration-300"
+                                    >
+                                        <span className="text-sm !cursor-pointer">{navItem.name}</span>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -89,14 +89,14 @@ export const FloatingNav = ({
                     <nav>
                         <ul className="space-y-4">
                             {navItems.map((navItem: any, idx: number) => (
-                                <li><Link
-                                    key={`link=${idx}`}
-                                    href={navItem.link}
-                                    className="block text-lg hover:text-blue-400 transition duration-300"
-                                    onClick={closeMenu}
-                                >
-                                    <span className="text-sm !cursor-pointer">{navItem.name}</span>
-                                </Link>
+                                <li key={`link=${idx}`}>
+                                    <Link
+                                        href={navItem.link}
+                                        className="block text-lg hover:text-blue-400 transition duration-300"
+                                        onClick={closeMenu}
+                                    >
+                                        <span className="text-sm !cursor-pointer">{navItem.name}</span>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
