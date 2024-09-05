@@ -1,13 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import {
-    motion,
-    AnimatePresence,
-    useScroll,
-    useMotionValueEvent,
-} from "framer-motion";
+import React, { useEffect, useState } from "react";
+
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaXmark } from "react-icons/fa6";
 
 export const FloatingNav = ({
     navItems,
@@ -20,60 +17,106 @@ export const FloatingNav = ({
     }[];
     className?: string;
 }) => {
-    const { scrollYProgress } = useScroll();
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const [visible, setVisible] = useState(false);
-
-    useMotionValueEvent(scrollYProgress, "change", (current) => {
-        // Check if current is not undefined and is a number
-        if (typeof current === "number") {
-            let direction = current! - scrollYProgress.getPrevious()!;
-
-            if (scrollYProgress.get() < 0.05) {
-                setVisible(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setIsScrolled(true)
             } else {
-                if (direction < 0) {
-                    setVisible(true);
-                } else {
-                    setVisible(false);
-                }
+                setIsScrolled(false)
             }
         }
-    });
 
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
+
+    const closeMenu = () => {
+        setIsMenuOpen(false)
+    }
     return (
-        <AnimatePresence mode="wait">
-            <motion.div
-                initial={{
-                    opacity: 1,
-                    y: -100,
-                }}
-                animate={{
-                    y: visible ? 0 : -100,
-                    opacity: visible ? 1 : 0,
-                }}
-                transition={{
-                    duration: 0.2,
-                }}
-                className={cn(
-                    "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-5  items-center justify-center space-x-4 border-white/[0.2] bg-black-100 ",
-                    className
-                )}
-            >
-                {navItems.map((navItem: any, idx: number) => (
-                    <Link
-                        key={`link=${idx}`}
-                        href={navItem.link}
-                        className={cn(
-                            "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-                        )}
-                    >
-                        <span className="block sm:hidden">{navItem.icon}</span>
-                        <span className="text-sm !cursor-pointer">{navItem.name}</span>
-                    </Link>
-                ))}
+        <>
+            {/* Desktop nav */}
 
-            </motion.div>
-        </AnimatePresence>
+            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-[rgba(10,10,10,0.8)] backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+                <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                    <h1 className="text-2xl font-bold">Dinesh</h1>
+                    <nav className="hidden md:block">
+                        <ul className="flex space-x-6">
+                            {navItems.map((navItem: any, idx: number) => (
+                                <li><Link
+                                    key={`link=${idx}`}
+                                    href={navItem.link}
+                                    className="hover:text-blue-400 transition duration-300"
+                                >
+                                    <span className="text-sm !cursor-pointer">{navItem.name}</span>
+                                </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                    <button
+                        className="md:hidden text-white focus:outline-none"
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <GiHamburgerMenu size={24} />
+                    </button>
+                </div>
+            </header>
+
+            {/* Mobile slide-in menu */}
+            <div
+                className={`fixed top-0 right-0 bottom-0 w-64 bg-[rgb(20,20,20)] z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                    }`}
+            >
+                <div className="p-4">
+                    <button
+                        className="text-white mb-4 focus:outline-none"
+                        onClick={closeMenu}
+                        aria-label="Close menu"
+                    >
+                        <FaXmark size={24} />
+                    </button>
+                    <nav>
+                        <ul className="space-y-4">
+                            {navItems.map((navItem: any, idx: number) => (
+                                <li><Link
+                                    key={`link=${idx}`}
+                                    href={navItem.link}
+                                    className="block text-lg hover:text-blue-400 transition duration-300"
+                                    onClick={closeMenu}
+                                >
+                                    <span className="text-sm !cursor-pointer">{navItem.name}</span>
+                                </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            {/* Overlay */}
+            {
+                isMenuOpen && (
+                    <div
+                        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                        onClick={closeMenu}
+                    ></div>
+                )
+            }
+
+
+
+
+        </>
     );
 };
