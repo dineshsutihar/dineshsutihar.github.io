@@ -46,7 +46,7 @@ export const FloatingNav = ({
         <>
             {/* Desktop nav */}
 
-            <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-[rgba(10,10,10,0.8)] backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+            <header className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ease-in-out ${isScrolled ? 'bg-[#0a0a0a4f] backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
                 <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                     <h1 className="text-2xl font-bold">Dinesh</h1>
                     <nav className="hidden md:block">
