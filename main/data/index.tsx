@@ -5,7 +5,7 @@ import { SiAuth0, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiP
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Blog", link: "/Blog" },
+    { name: "Blog", link: "/blog" },
     { name: "Resume", link: "/resume" },
     { name: "Contact", link: "#contact" },
 ];
