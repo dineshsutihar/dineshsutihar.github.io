@@ -88,7 +88,7 @@ export const projects = [
     {
         id: 2,
         title: "OrganizeIt - Fullstack Todo App",
-        des: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and also dockerized for easy deployment.",
+        des: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and also dockerized for easy deployment. It under construction now..",
         img: "https://github.com/dineshsutihar/todo-fullstack/blob/main/design/design.png?raw=true",
         iconLists: [<RiNextjsLine />, <SiMongodb />, <SiVercel />, <SiRender />, <SiTailwindcss />, <SiDocker />],
         link: "https://organizeit.dineshsutihar.me",

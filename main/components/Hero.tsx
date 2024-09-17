@@ -25,7 +25,7 @@ const Hero = () => {
                         <h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>Elevating Ideas into Reality</h2>
                         <TextGenerateEffect className='text-center text-[35px] md:text-5xl lg:text-[55px]' words='Crafting Digital Solutions with a Human Touch' />
                         <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-                            Hi, I&apos;m Dinesh Sutihar, a Software Developer & Designer Passinate About Building the Future.
+                            Hi, I&apos;m Dinesh Sutihar, a Software Developer & Designer Passionate About Building the Future.
                         </p>
                         <a href="#about">
                             <MagicButton
