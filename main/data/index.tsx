@@ -1,6 +1,7 @@
-import { FaCss3, FaHtml5, FaLinkedin, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
+import { FaCss3, FaDatabase, FaHtml5, FaLinkedin, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
+import { FaArrowsSplitUpAndLeft } from "react-icons/fa6";
 import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
-import { SiAuth0, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiPostcss, SiPostgresql, SiRender, SiTailwindcss, SiVercel } from "react-icons/si";
+import { SiAuth0, SiClerk, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiPostcss, SiPostgresql, SiRender, SiTailwindcss, SiVercel } from "react-icons/si";
 
 export const navItems = [
     { name: "About", link: "#about" },
@@ -77,36 +78,59 @@ export const gridItems = [
 export const projects = [
     {
         id: 1,
-        title: "Clarity Crunch - Text Summarization",
-        des: "A text summarization tool that uses AI to summarize articles, essays, and other long-form content.",
-        img: "https://github.com/dineshsutihar/ClarityCrunch/raw/main/public/images/DocsImage.png",
-        iconLists: [<FaHtml5 />, <FaCss3 />, <SiExpress />, <FaNodeJs />, <SiHuggingface />],
-        link: "https://clarity.dineshsutihar.me/",
+        title: "CollabBoard - Realtime Whiteboard",
+        des: "CollabBoard is a realtime whiteboard app that allows users to collaborate in real-time, with features like drawing, text, and sticky notes.",
+        img: "/collab.png",
+        iconLists: [<RiNextjsLine />, <SiClerk />, <SiVercel />, <SiTailwindcss />, <FaArrowsSplitUpAndLeft />, <FaDatabase />],
+        link: "https://collabboard.dineshsutihar.me",
+        code: "https://github.com/dineshsutihar/collab_board/"
     },
     {
         id: 2,
+        title: "OrganizeIt - Fullstack Todo App",
+        des: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and also dockerized for easy deployment.",
+        img: "https://github.com/dineshsutihar/todo-fullstack/blob/main/design/design.png?raw=true",
+        iconLists: [<RiNextjsLine />, <SiMongodb />, <SiVercel />, <SiRender />, <SiTailwindcss />, <SiDocker />],
+        link: "https://organizeit.dineshsutihar.me",
+        code: "https://github.com/dineshsutihar/todo-fullstack"
+    },
+    {
+        id: 3,
         title: "Space Tourism Multipage",
         des: "A multipage website for a space tourism company, with a focus on modern design and smooth animations.",
         img: "https://github.com/dineshsutihar/space-tourism-multipage/blob/main/Design/index.jpg?raw=true",
         iconLists: [<RiJavascriptLine />, <FaHtml5 />, <FaCss3 />],
         link: "https://dineshsutihar.github.io/space-tourism-multipage/",
-    },
-    {
-        id: 3,
-        title: "Next-Dashboard",
-        des: "A responsive dashboard template for Next.js, featuring a modern design and reusable components.",
-        img: "/dashboard.png",
-        iconLists: [<RiNextjsLine />, <SiPostgresql />, <SiVercel />, <SiAuth0 />, <FaReact />, , <SiTailwindcss />],
-        link: "https://next-dashboard.dineshsutihar.me/",
+        code: "https://github.com/dineshsutihar/space-tourism-multipage"
     },
     {
         id: 4,
-        title: "OrganizeIt - Fullstack Todo App",
-        des: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and also dockerized for easy deployment.",
-        img: "https://github.com/dineshsutihar/todo-fullstack/blob/main/design/design.png?raw=true",
-        iconLists: [<RiNextjsLine />, <SiMongodb />, <SiMongoose />, <SiVercel />, <SiRender />, <SiTailwindcss />, <SiDocker />],
-        link: "https://organizeit.dineshsutihar.me",
+        title: "Clarity Crunch - Text Summarization",
+        des: "A text summarization tool that uses AI to summarize articles, essays, and other long-form content.",
+        img: "https://github.com/dineshsutihar/ClarityCrunch/raw/main/public/images/DocsImage.png",
+        iconLists: [<FaHtml5 />, <FaCss3 />, <SiExpress />, <FaNodeJs />, <SiHuggingface />],
+        link: "https://clarity.dineshsutihar.me/",
+        code: "https://github.com/dineshsutihar/ClarityCrunch/"
     },
+    {
+        id: 5,
+        title: "Next-Dashboard",
+        des: "A responsive dashboard template for Next.js, featuring a modern design and reusable components.Use Email: 'user@nextmail.com' | Password: '123456'",
+        img: "/dashboard.png",
+        iconLists: [<RiNextjsLine />, <SiPostgresql />, <SiVercel />, <SiAuth0 />, <FaReact />, , <SiTailwindcss />],
+        link: "https://next-dashboard.dineshsutihar.me/",
+        code: "https://github.com/dineshsutihar/Next-Dashboard"
+    },
+    {
+        id: 6,
+        title: "Algorithm Visualizer",
+        des: "A web app that visualizes sorting algorithms like Bubble Sort, Merge Sort, and Quick Sort, to help students understand how they work.",
+        img: "/algo.png",
+        iconLists: [<RiJavascriptLine />, <FaHtml5 />, <FaCss3 />],
+        link: "https://dineshsutihar.github.io/algorithm_visualizer/",
+        code: "https://github.com/dineshsutihar/algorithm_visualizer/"
+    },
+
 ];
 
 
