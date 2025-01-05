@@ -1,13 +1,18 @@
 import type { Education } from "@/data"
+import { GraduationCap } from "lucide-react"
 
 export default function Timeline({ details }: { details: Education[] }) {
     return (
 
         <section className="max-w-7xl mx-auto p-8 h-full bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl relative overflow-hidden  col-span-1 md:col-span-3 md:row-span-1">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Education Timeline</h2>
+            <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg">
+                    <GraduationCap className="w-5 h-5 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Education Timeline</h2>
+            </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-                A chronological overview of my educational journey, showcasing the institutions I&apos;ve attended, the courses I&apos;ve completed
-                , and the achievements I&apos;ve earned along the way.
+                A chronological overview of my educational journey, showcasing the institutions I&apos;ve attended, the courses I&apos;ve completed, and the achievements I&apos;ve earned along the way.
             </p>
             <ol className="relative border-s border-gray-200 dark:border-gray-700 mt-10 ">
                 {details.map((item) => (
