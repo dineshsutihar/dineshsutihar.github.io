@@ -6,6 +6,8 @@ import Contact from "@/components/Contact";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
 import Footer from "@/components/Footer";
+import LeetCodeStats from "@/components/LeetCodeStats";
+import GitHubContributions from "@/components/GitHubContributions";
 
 export default function Home() {
   return (
@@ -14,6 +16,9 @@ export default function Home() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
+        {/* <LeetCodeStats />
+        <GitHubContributions /> */}
+
         <RecentProjects />
         <Experience />
         <Contact />
