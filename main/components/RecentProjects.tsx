@@ -1,55 +1,43 @@
-import { projects } from '@/data'
-import React from 'react'
-import { PinContainer } from './ui/3d-pin'
-import { FaGithub, FaLocationArrow } from 'react-icons/fa'
+"use client"
+import { projects, type Project } from '@/data'
+import React, { useState } from 'react';
+import { ProjectCard } from './ProjectCard';
+import { ProjectModal } from './ProjectModal';
+
 
 const RecentProjects = () => {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     return (
-        <div className='py-20' id='projects'>
-            <h1 className="heading">
-                A Small selection of {' '}
-                <span className='text-purple'>recent projects</span>
-            </h1>
-            <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
-                {projects.map(({ id, title, des, img, iconLists, link, code }) => (
-                    <div key={id} className='sm:h-[41rem] lg:min-h-[32.5rem] h-[32rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
-                        <PinContainer title={link} href={link}>
-                            <div className='relative flex items-center justify-center sm:w-[570px] sm:h-[40vh] w-[80vw] overflow-hidden h-[30vh] mb-10'>
-                                <div className='relative w-full h-full overflow-hidden  lg:rounded-3xl bg-[#13162d]'>
-                                    <img src="/bg.png" alt="bg-img" />
-                                </div>
-                                <img src={img} alt={title} className='z-10 absolute w-[90%] h-[90%] rounded-xl  rotate-1 bottom-0' />
-                            </div>
-                            <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1 flex gap-2'>
-                                {title}
-                                <a href={link} target='_blank' className='flex underline underline-offset-4 justify-center items-center hover:cursor-pointer border p-1 rounded-md'>
-                                    <p className='flex lg:text-xl md:text-xs text-sm text-blue-300 hover:text-blue-400'>View</p>
-                                    <FaLocationArrow className='ms-2 hover:text-blue-400' color=' #93c5fd' />
+        <section className="min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8" id="recent-projects">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-12 sm:mb-16 md:mb-20">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
+                        Featured <span className="text-primary">Projects</span>
+                    </h2>
+                    <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+                        A curated selection of my recent work, showcasing innovative solutions and cutting-edge technologies
+                    </p>
+                </div>
 
-                                </a>
-                            </h1>
-                            <p className='lg:text-lg lg:font-normal font-light text-sm line-clamp-3'>{des}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                    {projects.map((project, index) => (
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            index={index}
+                            onClick={() => setSelectedProject(project)}
+                        />
+                    ))}
+                </div>
+            </div>
 
-                            <div className="flex items-center justify-between mt-7 mb-3">
-                                <div className="flex items-center">
-                                    {iconLists.map((icon, index) => (
-                                        <div key={index} className='border border-white/[0.2] rounded-full bg-black hover:bg-black-200 lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center' style={{ transform: `translateX(-${5 * index * 2}px)` }}>
-                                            {icon}
-                                        </div>
-                                    ))}
-                                </div>
-                                <a href={code} target='_blank' className='flex justify-center items-center hover:cursor-pointer '>
-                                    <FaGithub className='me-2' color='#cbacf9' />
-                                    <p className='flex lg:text-xl md:text-xs text-sm text-purple hover:text-blue-400'>Code</p>
-
-                                </a>
-                            </div>
-                        </PinContainer>
-                    </div>
-                ))
-                }
-            </div >
-        </div >
+            {selectedProject && (
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
+            )}
+        </section>
     )
 }
 
