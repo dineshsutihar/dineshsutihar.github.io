@@ -10,72 +10,8 @@ export const navItems = [
     { name: "Contact", link: "#contact" },
 ];
 
-export const gridItems = [
-    {
-        id: 1,
-        title: " Currently exploring the world of computer science and software development.",
-        description: " ",
-        className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-        imgClassName: "w-full h-full",
-        titleClassName: "justify-end",
-        img: "/b1.svg",
-        spareImg: "",
-    },
-    {
-        id: 2,
-        title: "I'm very flexible with time zone communications",
-        description: "",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-        imgClassName: "",
-        titleClassName: "justify-start",
-        img: "",
-        spareImg: "",
-    },
-    {
-        id: 3,
-        title: " Techstacks ",
-        description: "Not limited to these,",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-        imgClassName: "",
-        titleClassName: "justify-center",
-        img: "",
-        spareImg: "",
-    },
-    {
-        id: 4,
-        title: "Problem Solver, Team Player, and a Quick Learner.",
-        description: "",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-        imgClassName: "",
-        titleClassName: "justify-start",
-        img: "/grid.svg",
-        spareImg: "/b4.svg",
-    },
-
-    {
-        id: 5,
-        title: "Learning and building projects is my passion and I love to share my knowledge with others.",
-        description: "The Inside Scoop",
-        className: "md:col-span-3 md:row-span-2",
-        imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-        titleClassName: "justify-center md:justify-start lg:justify-center",
-        img: "/b5.svg",
-        spareImg: "/grid.svg",
-    },
-    {
-        id: 6,
-        title: "Do you want to start a project together?",
-        description: "",
-        className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-        imgClassName: "",
-        titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-        img: "",
-        spareImg: "",
-    },
-];
-
 export interface Project {
-    id: number;
+    id: string;
     title: string;
     description: string;
     shortDescription: string;
@@ -84,20 +20,61 @@ export interface Project {
     demoUrl?: string;
     githubUrl?: string;
     liveUrl?: string;
+    chromeUrl?: string;
+    edgeUrl?: string;
+    type: 'featured' | 'fullstack' | 'frontend' | 'backend' | 'ai-ml' | 'educational' | 'mobile' | 'other';
     techStack: string[];
     category: string;
+    year: number;
     features: string[];
     challenges?: string;
     outcome?: string;
-    credentials?: {
-        email: string;
-        password: string;
-    };
+    isFeatured?: boolean;
 }
 
 export const projects: Project[] = [
+    // Featured Projects
     {
-        id: 1,
+        id: "chrome-extension",
+        title: "Chrome Extension - Productivity Booster",
+        description: "CodeTranslateAI is a developer tool that lets you instantly translate or explain code snippets using AI. Supports multiple languages with clean output, and runs efficiently via Cloudflare Workers.",
+        shortDescription: "CodeTranslateAI — Instantly translate or explain code using AI.",
+        image: "https://github.com/dineshsutihar/CodeTranslateAI/blob/9a76586adea49aa053b132dcd19301f2113bfec5/promotional/Extension%2002.png?raw=true",
+        demoUrl: "https://github.com/dineshsutihar/CodeTranslateAI",
+        githubUrl: "https://github.com/dineshsutihar/CodeTranslateAI",
+        chromeUrl: "https://chromewebstore.google.com/detail/cbopkkjljoiabjobmjhmoaglkiffgpel?utm_source=item-share-cb",
+        edgeUrl: "https://microsoftedge.microsoft.com/addons/detail/codetranslateai/lkdmdgdalcmbhfjakgmgljkknmbafbjp",
+        techStack: ["JavaScript", "HTML5", "CSS3", "Chrome APIs", "Manifest V3", "Cloudflare Workers", "TypeScript", "Gemini", "Open Source"],
+        category: "Browser Extension",
+        type: "featured",
+        year: 2024,
+        features: ["Instant code translation", "Supports multiple languages", "Clean output format", "Runs on Cloudflare Workers", "Open source"],
+        challenges: "Working with Chrome extension APIs and ensuring cross-browser compatibility.",
+        outcome: "A powerful tool for developers that streamlines the coding process and enhances productivity.",
+        isFeatured: true,
+    },
+    {
+        id: "log-analyzer",
+        title: "LogAnalyzer - AI-Powered Log Analysis",
+        description: "An intelligent log analysis tool that uses Large language models to detect anomalies, patterns, and potential issues in system logs and gives resolution steps to fix the issues.",
+        shortDescription: "AI-powered tool for smart log analysis and anomaly detection.",
+        image: "https://res.cloudinary.com/dineshsutihar/image/upload/v1754424352/Screenshot_From_2025-08-06_01-34-07_psrut3.png",
+        demoUrl: "http://loganalyzer.dineshsutihar.me/",
+        githubUrl: "https://github.com/dineshsutihar/Log-Analyzer/",
+        liveUrl: "https://loganalyzer.dineshsutihar.me",
+        techStack: ["Python", "RAG", "LangChain", "React", "ExpressJs", "MongoDB", "Docker", "Redis"],
+        category: "AI/ML",
+        type: "featured",
+        year: 2024,
+        features: ["Anomaly detection", "Log analysis", "Real-time analysis", "Dashboard visualization", "Alert system", "Resolution steps"],
+        challenges: "Processing large log files efficiently and ensuring accurate anomaly detection.",
+        outcome: "An advanced log analysis system that uses AI to streamline debugging and improve system reliability.",
+        isFeatured: true,
+    },
+
+    // Regular Projects
+    {
+        id: "collab-board",
         title: "CollabBoard - Realtime Whiteboard",
         description: "CollabBoard is a realtime whiteboard app that allows users to collaborate in real-time, with features like drawing, text, and sticky notes.",
         shortDescription: "A collaborative whiteboard app for real-time teamwork.",
@@ -108,12 +85,14 @@ export const projects: Project[] = [
         liveUrl: "https://collabboard.dineshsutihar.me",
         techStack: ["Next.js", "Clerk", "Vercel", "Tailwind CSS", "WebRTC", "Database"],
         category: "FullStack Web App",
+        type: "fullstack",
+        year: 2024,
         features: ["Real-time collaboration", "Drawing tools", "Text annotations", "Sticky notes", "User authentication"],
         challenges: "Implementing real-time updates and ensuring smooth collaboration between users.",
-        outcome: "A fully functional whiteboard app that allows multiple users to collaborate in real-time, enhancing teamwork and productivity."
+        outcome: "A fully functional whiteboard app that allows multiple users to collaborate in real-time, enhancing teamwork and productivity.",
     },
     {
-        id: 2,
+        id: "organize-it",
         title: "OrganizeIt - Fullstack Todo App",
         description: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and is dockerized for easy deployment. Currently under development.",
         shortDescription: "A todo app with fullstack features and Docker integration.",
@@ -123,12 +102,14 @@ export const projects: Project[] = [
         liveUrl: "https://organizeit.dineshsutihar.me",
         techStack: ["Next.js", "MongoDB", "Vercel", "Render", "Tailwind CSS", "Docker"],
         category: "Full Stack",
+        type: "fullstack",
+        year: 2024,
         features: ["User authentication", "CRUD operations", "Minimalist design", "Docker deployment"],
         challenges: "Integrating Docker and managing deployment pipelines during ongoing development.",
-        outcome: "A work-in-progress productivity app aimed at efficient task management with a modern stack."
+        outcome: "A work-in-progress productivity app aimed at efficient task management with a modern stack.",
     },
     {
-        id: 3,
+        id: "space-tourism",
         title: "Space Tourism Multipage",
         description: "A multipage responsive website for a fictional space tourism company, emphasizing clean modern design and smooth page transitions.",
         shortDescription: "A stylish multi-page frontend website for space travel.",
@@ -138,12 +119,14 @@ export const projects: Project[] = [
         liveUrl: "https://dineshsutihar.github.io/space-tourism-multipage/",
         techStack: ["JavaScript", "HTML5", "CSS3"],
         category: "Frontend",
+        type: "frontend",
+        year: 2023,
         features: ["Responsive design", "Smooth animations", "Multi-page navigation", "Modern UI"],
         challenges: "Creating fluid navigation transitions and maintaining design consistency across pages.",
         outcome: "A sleek, engaging multipage site for showcasing frontend skills."
     },
     {
-        id: 4,
+        id: "clarity-crunch",
         title: "Clarity Crunch - Text Summarization",
         description: "Clarity Crunch is an AI-powered tool that summarizes long-form content like essays and articles using advanced NLP models.",
         shortDescription: "An AI-based tool to quickly summarize lengthy text content.",
@@ -153,12 +136,14 @@ export const projects: Project[] = [
         liveUrl: "https://clarity.dineshsutihar.me/",
         techStack: ["HTML5", "CSS3", "Express", "Node.js", "Hugging Face"],
         category: "AI/ML",
+        type: "ai-ml",
+        year: 2023,
         features: ["AI text summarization", "Article processing", "Clean interface", "Fast processing"],
         challenges: "Integrating NLP models and managing performance for large text inputs.",
         outcome: "A smart summarization platform that helps users digest information faster and more effectively."
     },
     {
-        id: 5,
+        id: "next-dashboard",
         title: "Next-Dashboard",
         description: "Next-Dashboard is a responsive admin dashboard template built using Next.js. It features a modern UI, user authentication, analytics widgets, and reusable components.",
         shortDescription: "A modern, responsive dashboard built with Next.js and Auth0.",
@@ -168,16 +153,14 @@ export const projects: Project[] = [
         liveUrl: "https://next-dashboard.dineshsutihar.me/",
         techStack: ["Next.js", "PostgreSQL", "Vercel", "Auth0", "React", "Tailwind CSS"],
         category: "Full Stack",
+        type: "fullstack",
+        year: 2023,
         features: ["Authentication", "Dashboard analytics", "Responsive design", "Reusable components"],
         challenges: "Implementing secure authentication and designing modular components.",
         outcome: "A sleek and scalable admin dashboard for various applications.",
-        credentials: {
-            email: "user@nextmail.com",
-            password: "123456"
-        }
     },
     {
-        id: 6,
+        id: "algorithm-visualizer",
         title: "Algorithm Visualizer",
         description: "A web-based visualization tool for sorting algorithms including Bubble Sort, Merge Sort, and Quick Sort, aimed at improving algorithm understanding through visuals.",
         shortDescription: "An interactive tool to visualize how sorting algorithms work.",
@@ -187,6 +170,8 @@ export const projects: Project[] = [
         liveUrl: "https://dineshsutihar.github.io/algorithm_visualizer/",
         techStack: ["JavaScript", "HTML5", "CSS3"],
         category: "Educational",
+        type: "educational",
+        year: 2023,
         features: ["Algorithm visualization", "Interactive learning", "Multiple sorting algorithms", "Step-by-step process"],
         challenges: "Ensuring clear step-by-step visual transitions and handling algorithm speed.",
         outcome: "A helpful educational tool for students to grasp sorting concepts with clarity."
@@ -235,8 +220,8 @@ export const education: Education[] = [
 export const workExperience = [
     {
         id: 1,
-        title: "Frontend Engineer Intern",
-        desc: "Developed multiple pages like About, Gallery, and Home for a client's website at Softtech Engineering Pvt. Ltd.",
+        title: "Full Stack Developer Intern",
+        desc: "Developed multiple pages like About, Gallery, and Home for a client's website and added CMS functionality at Softtech Engineering Pvt. Ltd.",
         className: "md:col-span-2",
         thumbnail: "/exp1.svg",
     },
@@ -373,13 +358,13 @@ export const sections: AchievementSection[] = [
                 label:
                     "IoT-Driven Smart Classroom System for Efficient Resource Monitoring and Automation",
                 details: "16th International Conference on Recent Engineering & Technology, May 2025",
-                url: ""
+                url: "https://media.licdn.com/dms/image/v2/D5622AQGfFvJ959x_dg/feedshare-shrink_2048_1536/B56ZbfI54AH4Ao-/0/1747500380191?e=1757548800&v=beta&t=KYiLzIWfr0Q1duG10co772jhnNG7gEHRrQzxDvV4yLU"
             },
             {
                 label:
                     "Advancing Log Analysis and Anomaly Detection with Large Language Models",
                 details: "16th ICCCNT, July 2025",
-                url: ""
+                url: "https://media.licdn.com/dms/image/v2/D5622AQHelze85N5jAg/feedshare-shrink_2048_1536/B56ZhvNAoHHMAo-/0/1754212389557?e=1757548800&v=beta&t=S34Ml6ujiXmuxSUlt401uE3aQale9GidliiDN4HBuZc"
             }
         ]
     },
