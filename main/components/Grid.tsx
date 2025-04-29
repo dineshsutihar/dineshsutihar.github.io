@@ -12,7 +12,7 @@ import { BlogList } from "./BlogList";
 import SkillsSection from "./SkillsSection";
 import Achievements from "./Achievements";
 
-export const Grid2 = () => {
+export const Grid = () => {
     return (
         <section id="about" className="grid grid-cols-1 md:grid-cols-5 gap-6">
 
