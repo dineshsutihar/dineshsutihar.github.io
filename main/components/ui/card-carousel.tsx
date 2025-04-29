@@ -93,9 +93,22 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                     : undefined
                 }
                 modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
+                onSwiper={(swiper) => {
+                  (window as any).__cardCarouselSwiper = swiper
+                }}
               >
                 {items.map((project, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide
+                    key={index}
+                    onMouseEnter={() => {
+                      const swiper = (window as any).__cardCarouselSwiper
+                      if (swiper && swiper.autoplay) swiper.autoplay.stop()
+                    }}
+                    onMouseLeave={() => {
+                      const swiper = (window as any).__cardCarouselSwiper
+                      if (swiper && swiper.autoplay) swiper.autoplay.start()
+                    }}
+                  >
                     <div className="size-full rounded-3xl">
                       <ProjectCard
                         key={project.id}
@@ -107,7 +120,17 @@ export const CardCarousel: React.FC<CarouselProps> = ({
                   </SwiperSlide>
                 ))}
                 {items.map((project, index) => (
-                  <SwiperSlide key={index}>
+                  <SwiperSlide
+                    key={index + items.length}
+                    onMouseEnter={() => {
+                      const swiper = (window as any).__cardCarouselSwiper
+                      if (swiper && swiper.autoplay) swiper.autoplay.stop()
+                    }}
+                    onMouseLeave={() => {
+                      const swiper = (window as any).__cardCarouselSwiper
+                      if (swiper && swiper.autoplay) swiper.autoplay.start()
+                    }}
+                  >
                     <div className="size-full rounded-3xl">
                       <ProjectCard
                         key={project.id}
