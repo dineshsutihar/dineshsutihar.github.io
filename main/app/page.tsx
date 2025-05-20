@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
 import Footer from "@/components/Footer";
+import { Grid2 } from "@/components/Grid2";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
+        <Grid2 />
         <Grid />
         <RecentProjects />
         <Experience />
