@@ -253,6 +253,44 @@ export const projects: Project[] = [
     }
 ];
 
+export interface Education {
+    id: number,
+    institution: string,
+    course: string,
+    startDate: string,
+    endDate?: string,
+    percentage?: string,
+    cgpa?: string,
+    status?: string,
+}
+
+export const education: Education[] = [
+    {
+        id: 1,
+        institution: "JAIN (Deemed-to-be University), Bangalore, India",
+        course: "Bachelor of Technology in Computer Science Engineering",
+        startDate: "2022",
+        endDate: "2026",
+        cgpa: "9.3/10",
+        status: "Ongoing"
+    },
+    {
+        id: 2,
+        institution: "Geeta Engineering College (Currently Geeta University), India",
+        course: "Diploma in Graphics and Multimedia (D.Voc), NSQF Level 3-5",
+        startDate: "2019",
+        endDate: "2022",
+        percentage: "83.13%",
+    },
+    {
+        id: 3,
+        institution: "Shiva International English Boarding Secondary School, Nepal",
+        course: "Secondary Education Examination (10th)",
+        startDate: "2018",
+        endDate: "2019",
+        percentage: "77.5%"
+    }
+];
 
 export const workExperience = [
     {
