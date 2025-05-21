@@ -3,7 +3,7 @@ import type { Education } from "@/data"
 export default function Timeline({ details }: { details: Education[] }) {
     return (
 
-        <section className="max-w-7xl mx-auto p-8 h-full bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl relative overflow-hidden  col-span-1 md:col-span-3">
+        <section className="max-w-7xl mx-auto p-8 h-full bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl relative overflow-hidden  col-span-1 md:col-span-3 md:row-span-1">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Education Timeline</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
                 A chronological overview of my educational journey, showcasing the institutions I&apos;ve attended, the courses I&apos;ve completed
