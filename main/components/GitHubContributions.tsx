@@ -15,44 +15,12 @@ const GitHubContributions = () => {
     const [loading, setLoading] = useState(true);
     const username = 'dineshsutihar';
 
-    const TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN!;
-
     useEffect(() => {
         const fetchData = async () => {
-            const query = `
-        query {
-          user(login: "${username}") {
-            contributionsCollection {
-              contributionCalendar {
-                weeks {
-                  contributionDays {
-                    date
-                    contributionCount
-                  }
-                }
-              }
-            }
-            repositories(first: 100, ownerAffiliations: OWNER) {
-              totalCount
-              nodes {
-                stargazerCount
-              }
-            }
-          }
-        }
-      `;
-
             try {
-                const res = await fetch('https://api.github.com/graphql', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${TOKEN}`,
-                    },
-                    body: JSON.stringify({ query }),
-                });
-
+                const res = await fetch('/api/github');
                 const json = await res.json();
+
                 const weeks = json.data.user.contributionsCollection.contributionCalendar.weeks;
                 const repos = json.data.user.repositories;
 
@@ -66,7 +34,9 @@ const GitHubContributions = () => {
 
                 setContributionData(parsed);
                 setTotalRepos(repos.totalCount);
-                setTotalStars(repos.nodes.reduce((sum: number, repo: any) => sum + repo.stargazerCount, 0));
+                setTotalStars(
+                    repos.nodes.reduce((sum: number, repo: any) => sum + repo.stargazerCount, 0)
+                );
             } catch (error) {
                 console.error('Failed to fetch contributions:', error);
             }
@@ -76,6 +46,7 @@ const GitHubContributions = () => {
 
         fetchData();
     }, []);
+
 
     const getLevel = (count: number): number => {
         if (count === 0) return 0;
