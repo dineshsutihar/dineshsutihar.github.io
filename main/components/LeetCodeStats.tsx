@@ -11,6 +11,10 @@ const LeetCodeStats = () => {
         const fetchData = async () => {
             const query = `
         query getUserProfile($username: String!) {
+          allQuestionsCount {
+            difficulty
+            count
+          }
           matchedUser(username: $username) {
             username
             submitStats: submitStatsGlobal {
@@ -73,27 +77,32 @@ const LeetCodeStats = () => {
         return acc;
     }, {});
 
+    const totalMap = data.allQuestionsCount.reduce((acc: any, item: any) => {
+        acc[item.difficulty.toLowerCase()] = item.count;
+        return acc;
+    }, {});
+
     const contestStats = data.userContestRanking || {};
 
     const progressData = [
         {
             label: "Easy",
             solved: solvedMap.easy || 0,
-            total: 800,
+            total: totalMap.easy || 0,
             color: "text-green-400",
             bgColor: "bg-green-400",
         },
         {
             label: "Medium",
             solved: solvedMap.medium || 0,
-            total: 1600,
+            total: totalMap.medium || 0,
             color: "text-yellow-400",
             bgColor: "bg-yellow-400",
         },
         {
             label: "Hard",
             solved: solvedMap.hard || 0,
-            total: 600,
+            total: totalMap.hard || 0,
             color: "text-red-400",
             bgColor: "bg-red-400",
         },
@@ -104,16 +113,40 @@ const LeetCodeStats = () => {
             <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10 h-full flex flex-col">
-                <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-lg">
-                        <Code className="w-5 h-5 text-white" />
+                {/* Header with Title and Contest Stats */}
+                <div className="flex justify-between items-center mb-6">
+                    <div className="flex items-center gap-3">
+                        <div className="p-2 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-lg">
+                            <Code className="w-5 h-5 text-white" />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-bold text-white">LeetCode</h3>
+                            <p className="text-sm text-gray-400">@{username}</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 className="text-lg font-bold text-white">LeetCode</h3>
-                        <p className="text-sm text-gray-400">@{username}</p>
+                    <div className="flex gap-2">
+                        <div className="bg-slate-500/10 rounded-lg px-3 py-2 border border-slate-500/20 text-center">
+                            <div className="flex items-center justify-center gap-1 mb-1">
+                                <Trophy className="w-3 h-3 text-orange-400" />
+                                <span className="text-xs text-orange-400">Global Rank</span>
+                            </div>
+                            <div className="text-sm font-bold text-white">
+                                {contestStats.globalRanking?.toLocaleString() || "N/A"}
+                            </div>
+                        </div>
+                        <div className="bg-slate-500/10 rounded-lg px-3 py-2 border border-slate-500/20 text-center">
+                            <div className="flex items-center justify-center gap-1 mb-1">
+                                <Target className="w-3 h-3 text-orange-400" />
+                                <span className="text-xs text-orange-400">Rating</span>
+                            </div>
+                            <div className="text-sm font-bold text-white">
+                                {contestStats.rating?.toFixed(0) || "N/A"}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                {/* Total Solved */}
                 <div className="bg-slate-500/10 rounded-xl p-4 border border-slate-500/20 mb-4">
                     <div className="text-center mb-3">
                         <div className="text-2xl font-bold text-orange-400">
@@ -145,45 +178,27 @@ const LeetCodeStats = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 mb-4">
-                    <div className="bg-slate-500/10 rounded-lg p-3 border border-slate-500/20 text-center">
-                        <div className="flex items-center justify-center gap-1 mb-1">
-                            <Trophy className="w-3 h-3 text-orange-400" />
-                            <span className="text-xs text-orange-400">Global Ranking</span>
-                        </div>
-                        <div className="text-sm font-bold text-white">
-                            {contestStats.globalRanking?.toLocaleString() || "N/A"}
-                        </div>
-                    </div>
-                    <div className="bg-slate-500/10 rounded-lg p-3 border border-slate-500/20 text-center">
-                        <div className="flex items-center justify-center gap-1 mb-1">
-                            <Target className="w-3 h-3 text-orange-400" />
-                            <span className="text-xs text-orange-400">Contest Rating</span>
-                        </div>
-                        <div className="text-sm font-bold text-white">
-                            {contestStats.rating?.toFixed(0) || "N/A"}
-                        </div>
-                    </div>
-                </div>
-
+                {/* Recent Contest */}
                 {data.userContestRankingHistory?.length > 0 && (
-                    <div className="text-xs text-gray-400 mb-2">Recent Contest</div>
+                    <>
+                        <div className="text-xs text-gray-400 mb-2">Recent Contests</div>
+                        <div className="space-y-1">
+                            {data.userContestRankingHistory
+                                .filter((c: any) => c.attended)
+                                .slice(-2)
+                                .reverse()
+                                .map((c: any, idx: number) => (
+                                    <div
+                                        key={idx}
+                                        className="flex items-center justify-between text-xs bg-slate-800/30 rounded p-2"
+                                    >
+                                        <span className="text-gray-300 truncate">{c.contest.title}</span>
+                                        <span className="text-orange-400">{c.rating.toFixed(0)}</span>
+                                    </div>
+                                ))}
+                        </div>
+                    </>
                 )}
-                <div className="space-y-1">
-                    {data.userContestRankingHistory
-                        .filter((c: any) => c.attended)
-                        .slice(-2)
-                        .reverse()
-                        .map((c: any, idx: number) => (
-                            <div
-                                key={idx}
-                                className="flex items-center justify-between text-xs bg-slate-800/30 rounded p-2"
-                            >
-                                <span className="text-gray-300 truncate">{c.contest.title}</span>
-                                <span className="text-orange-400">{c.rating.toFixed(0)}</span>
-                            </div>
-                        ))}
-                </div>
             </div>
         </div>
     );
