@@ -22,9 +22,8 @@ export async function POST(req: NextRequest) {
     });
   } catch (err) {
     console.error("Error fetching from LeetCode:", err);
-    return new Response(
-      JSON.stringify({ message: "Internal Server Error" }),
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
+      status: 500,
+    });
   }
 }
