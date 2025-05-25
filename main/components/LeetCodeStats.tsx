@@ -109,7 +109,7 @@ const LeetCodeStats = () => {
     ];
 
     return (
-        <div className="h-full bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 relative overflow-hidden col-span-1 md:col-span-2">
+        <div className="h-full bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-xl"></div>
 
             <div className="relative z-10 h-full flex flex-col">
@@ -132,15 +132,6 @@ const LeetCodeStats = () => {
                             </div>
                             <div className="text-sm font-bold text-white">
                                 {contestStats.globalRanking?.toLocaleString() || "N/A"}
-                            </div>
-                        </div>
-                        <div className="bg-slate-500/10 rounded-lg px-3 py-2 border border-slate-500/20 text-center">
-                            <div className="flex items-center justify-center gap-1 mb-1">
-                                <Target className="w-3 h-3 text-orange-400" />
-                                <span className="text-xs text-orange-400">Rating</span>
-                            </div>
-                            <div className="text-sm font-bold text-white">
-                                {contestStats.rating?.toFixed(0) || "N/A"}
                             </div>
                         </div>
                     </div>
