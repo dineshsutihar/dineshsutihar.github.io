@@ -80,11 +80,11 @@ const RecentCommits = () => {
 
             <div className="relative z-10 space-y-6">
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg">
+                    <div className="p-2 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-lg">
                         <GitCommit className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                        <h3 className="text-lg font-bold text-white">Recent Activity</h3>
+                        <h3 className="text-lg font-bold text-white">Github Commits</h3>
                         <p className="text-sm text-gray-400">Latest 7 commits</p>
                     </div>
                 </div>
