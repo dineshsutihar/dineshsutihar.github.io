@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Code } from 'lucide-react'; 
+import { Code } from 'lucide-react';
 
 const getUTCDayStart = (date: Date) => {
     const d = new Date(date);
@@ -100,12 +100,12 @@ export const LeetCodeHeatmap = () => {
 
             <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 bg-gradient-to-r from-slate-700 to-slate-600 rounded-lg">
+                    <div className="p-2 bg-gradient-to-r  from-orange-500 to-yellow-500 rounded-lg">
                         <Code className="w-5 h-5 text-white" />
                     </div>
                     <div>
                         <h3 className="text-lg font-bold text-white">LeetCode Activity</h3>
-                        <p className="text-sm text-gray-400">Daily submission heatmap</p>
+                        <p className="text-sm text-gray-400">@dineshsutihar</p>
                     </div>
                 </div>
 
