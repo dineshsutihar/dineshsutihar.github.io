@@ -8,6 +8,7 @@ import { LeetCodeContest } from "./LeetCodeContest";
 import { LeetCodeHeatmap } from "./LeetCodeHeatmap";
 import LeetCodeStats from "./LeetCodeStats";
 import { CTAButton } from "./CTAButton";
+import { BlogList } from "./BlogList";
 
 export const Grid2 = () => {
     return (
@@ -32,8 +33,11 @@ export const Grid2 = () => {
             <div className="col-span-1 md:col-span-2">
                 <LeetCodeStats />
             </div>
-            <div className="col-span-1 md:col-span-4">
+            <div className="col-span-1 md:col-span-3">
                 <LeetCodeHeatmap />
+            </div>
+            <div className="col-span-1 md:col-span-2">
+                <BlogList />
             </div>
         </section>
     );
