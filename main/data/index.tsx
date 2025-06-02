@@ -3,6 +3,8 @@ import { FaArrowsSplitUpAndLeft } from "react-icons/fa6";
 import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
 import { SiAuth0, SiClerk, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiPostcss, SiPostgresql, SiRender, SiTailwindcss, SiVercel } from "react-icons/si";
 
+import { Cpu, Database, Brush, Server, Wrench } from "lucide-react";
+
 export const navItems = [
     { name: "About", link: "#about" },
     // { name: "Projects", link: "/projects" },
@@ -75,64 +77,6 @@ export const gridItems = [
         spareImg: "",
     },
 ];
-
-// export const projects = [
-//     {
-//         id: 1,
-//         title: "CollabBoard - Realtime Whiteboard",
-//         des: "CollabBoard is a realtime whiteboard app that allows users to collaborate in real-time, with features like drawing, text, and sticky notes.",
-//         img: "/collab.png",
-//         iconLists: [<RiNextjsLine />, <SiClerk />, <SiVercel />, <SiTailwindcss />, <FaArrowsSplitUpAndLeft />, <FaDatabase />],
-//         link: "https://collabboard.dineshsutihar.me",
-//         code: "https://github.com/dineshsutihar/collab_board/"
-//     },
-//     {
-//         id: 2,
-//         title: "OrganizeIt - Fullstack Todo App",
-//         des: "OrganizeIt is a fullstack todo app with user authentication, CRUD operations, a clean, minimalist design, and also dockerized for easy deployment. It under construction now..",
-//         img: "https://github.com/dineshsutihar/todo-fullstack/blob/main/design/design.png?raw=true",
-//         iconLists: [<RiNextjsLine />, <SiMongodb />, <SiVercel />, <SiRender />, <SiTailwindcss />, <SiDocker />],
-//         link: "https://organizeit.dineshsutihar.me",
-//         code: "https://github.com/dineshsutihar/todo-fullstack"
-//     },
-//     {
-//         id: 3,
-//         title: "Space Tourism Multipage",
-//         des: "A multipage website for a space tourism company, with a focus on modern design and smooth animations.",
-//         img: "https://github.com/dineshsutihar/space-tourism-multipage/blob/main/Design/index.jpg?raw=true",
-//         iconLists: [<RiJavascriptLine />, <FaHtml5 />, <FaCss3 />],
-//         link: "https://dineshsutihar.github.io/space-tourism-multipage/",
-//         code: "https://github.com/dineshsutihar/space-tourism-multipage"
-//     },
-//     {
-//         id: 4,
-//         title: "Clarity Crunch - Text Summarization",
-//         des: "A text summarization tool that uses AI to summarize articles, essays, and other long-form content.",
-//         img: "https://github.com/dineshsutihar/ClarityCrunch/raw/main/public/images/DocsImage.png",
-//         iconLists: [<FaHtml5 />, <FaCss3 />, <SiExpress />, <FaNodeJs />, <SiHuggingface />],
-//         link: "https://clarity.dineshsutihar.me/",
-//         code: "https://github.com/dineshsutihar/ClarityCrunch/"
-//     },
-//     {
-//         id: 5,
-//         title: "Next-Dashboard",
-//         des: "A responsive dashboard template for Next.js, featuring a modern design and reusable components.Use Email: 'user@nextmail.com' | Password: '123456'",
-//         img: "/dashboard.png",
-//         iconLists: [<RiNextjsLine />, <SiPostgresql />, <SiVercel />, <SiAuth0 />, <FaReact />, , <SiTailwindcss />],
-//         link: "https://next-dashboard.dineshsutihar.me/",
-//         code: "https://github.com/dineshsutihar/Next-Dashboard"
-//     },
-//     {
-//         id: 6,
-//         title: "Algorithm Visualizer",
-//         des: "A web app that visualizes sorting algorithms like Bubble Sort, Merge Sort, and Quick Sort, to help students understand how they work.",
-//         img: "/algo.png",
-//         iconLists: [<RiJavascriptLine />, <FaHtml5 />, <FaCss3 />],
-//         link: "https://dineshsutihar.github.io/algorithm_visualizer/",
-//         code: "https://github.com/dineshsutihar/algorithm_visualizer/"
-//     },
-
-// ];
 
 export interface Project {
     id: number;
@@ -346,3 +290,57 @@ export const contactMethods = [
         },
     }
 ]
+
+
+export interface SkillCategory {
+    title: string;
+    description: string;
+    skills: string[];
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    color: string;
+    gradient: string;
+}
+
+
+export const skillCategories: SkillCategory[] = [
+    {
+        title: 'Frontend',
+        description: "Crafting beautiful and performant user interfaces with modern frameworks and tools.",
+        skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        icon: Cpu,
+        color: '#00ffff',
+        gradient: 'from-cyan-400 to-blue-500'
+    },
+    {
+        title: 'Backend',
+        description: "Building robust server-side logic, APIs, and scalable architectures.",
+        skills: ['Node.js', 'Express', 'Python', 'Go', 'GraphQL'],
+        icon: Server,
+        color: '#ff9900',
+        gradient: 'from-orange-400 to-red-500'
+    },
+    {
+        title: 'Data & DevOps',
+        description: "Managing data pipelines, cloud infrastructure, and deployment automation.",
+        skills: ['AWS', 'Docker', 'PostgreSQL', 'Git', 'CI/CD'],
+        icon: Database,
+        color: '#38bdf8',
+        gradient: 'from-sky-400 to-indigo-500'
+    },
+    {
+        title: 'Design',
+        description: "Translating ideas into intuitive, accessible, and engaging user experiences.",
+        skills: ['Figma', 'UI/UX Principles', 'System Design'],
+        icon: Brush,
+        color: '#ee8877',
+        gradient: 'from-pink-400 to-rose-500'
+    },
+    {
+        title: 'Core Skills',
+        description: "Fundamental competencies that strengthen development across all domains.",
+        skills: ['Data Structures', 'Algorithms', 'Testing', 'Agile Methodologies'],
+        icon: Wrench,
+        color: '#a3e635',
+        gradient: 'from-lime-400 to-green-500'
+    },
+];
