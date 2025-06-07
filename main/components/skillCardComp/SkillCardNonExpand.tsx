@@ -10,14 +10,14 @@ interface SkillCardNonExpandProps {
 const SkillCardNonExpand = ({ onExpand, skillCategories }: SkillCardNonExpandProps) => {
     return (
         <motion.div
-            className="w-full max-w-2xl relative z-10"
+            className="w-full max-w-2xl relative z-10 h-full "
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 80, damping: 25 }}
             layoutId="skills-container"
         >
             <motion.div
-                className="bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 relative min-h-fit h-full cursor-pointer group hover:bg-blue-700/15 transition-all duration-500 shadow-2xl"
+                className="bg-gradient-to-br from-slate-900/40 to-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 relative min-h-fit h-full cursor-pointer group hover:bg-blue-700/15 transition-all duration-500 shadow-2xl content-center"
                 onClick={onExpand}
                 whileHover={{
                     scale: 1.05,
@@ -26,7 +26,7 @@ const SkillCardNonExpand = ({ onExpand, skillCategories }: SkillCardNonExpandPro
                 whileTap={{ scale: 0.98 }}
             >
                 <motion.h1
-                    className="text-6xl md:text-7xl font-mono font-bold text-white/90 mb-4 text-center tracking-wider"
+                    className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-white/90 mb-4 text-center tracking-wider"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
