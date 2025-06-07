@@ -1,9 +1,5 @@
-import { FaCss3, FaDatabase, FaHtml5, FaLinkedin, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
-import { FaArrowsSplitUpAndLeft } from "react-icons/fa6";
-import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
-import { SiAuth0, SiClerk, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiPostcss, SiPostgresql, SiRender, SiTailwindcss, SiVercel } from "react-icons/si";
-
-import { Cpu, Database, Brush, Server, Wrench } from "lucide-react";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Cpu, Database, Brush, Server, Wrench, BookOpen, BadgeCheck, } from "lucide-react";
 
 export const navItems = [
     { name: "About", link: "#about" },
@@ -344,3 +340,78 @@ export const skillCategories: SkillCategory[] = [
         gradient: 'from-lime-400 to-green-500'
     },
 ];
+
+
+export type AchievementItem = {
+    label: string;
+    url?: string;
+    details?: string;
+};
+
+export type AchievementSection = {
+    name: string;
+    icon: React.ElementType;
+    color: string;
+    items: AchievementItem[];
+};
+
+export const sections: AchievementSection[] = [
+    {
+        name: "Research Papers",
+        icon: BookOpen,
+        color: "from-blue-500 to-cyan-500",
+        items: [
+            {
+                label:
+                    "IoT-Driven Smart Classroom System for Efficient Resource Monitoring and Automation",
+                details: "16th International Conference on Recent Engineering & Technology, May 2025",
+                url: ""
+            },
+            {
+                label:
+                    "Advancing Log Analysis and Anomaly Detection with Large Language Models",
+                details: "16th ICCCNT, July 2025",
+                url: ""
+            }
+        ]
+    },
+    {
+        name: "Certifications",
+        icon: BadgeCheck,
+        color: "from-yellow-500 to-orange-500",
+        items: [
+            {
+                label: "Meta Front-End Development Professional Certificate",
+                url: "https://coursera.org/share/8cd6c873f5904003b9407a261c611169"
+            },
+            {
+                label: "Oracle SQL Database",
+                url: "https://coursera.org/share/ae905a78e35eec69979f0452aba7acaa"
+            },
+            {
+                label: "Cybersecurity for Everyone",
+                url: "https://coursera.org/share/e73b25048927a37a97a60f697a3218de"
+            },
+            {
+                label: "Hands-on to Linux Commands and Shell Scripting",
+                url: "https://coursera.org/share/81040416f4497215d08df0915e11ec7b"
+            },
+            {
+                label: "Supervised Machine Learning: Regression",
+                url: "https://coursera.org/share/a553414fe0f58773816ab1237f34681e"
+            },
+            {
+                label: "Supervised Machine Learning: Classification",
+                url: "https://coursera.org/share/6b724235554352fd23888a4bd395c6e2"
+            },
+            {
+                label: "Explore Machine Learning using Python by Infosys",
+            },
+            {
+                label: "Postman API Fundamentals Student Expert",
+
+            }
+        ]
+    }
+];
+
