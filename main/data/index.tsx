@@ -302,7 +302,7 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Frontend',
         description: "Crafting beautiful and performant user interfaces with modern frameworks and tools.",
-        skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'JavaScript', 'HTML5', 'CSS3'],
         icon: Cpu,
         color: '#00ffff',
         gradient: 'from-cyan-400 to-blue-500'
@@ -310,7 +310,7 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Backend',
         description: "Building robust server-side logic, APIs, and scalable architectures.",
-        skills: ['Node.js', 'Express', 'Python', 'Go', 'GraphQL'],
+        skills: ['Node.js', 'Express', 'Python', 'Flask', 'Java', 'Spring Boot', 'GraphQL', 'RESTful APIs', 'Microservices Architecture',],
         icon: Server,
         color: '#ff9900',
         gradient: 'from-orange-400 to-red-500'
@@ -318,15 +318,15 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Data & DevOps',
         description: "Managing data pipelines, cloud infrastructure, and deployment automation.",
-        skills: ['AWS', 'Docker', 'PostgreSQL', 'Git', 'CI/CD'],
+        skills: ['AWS', 'Docker', 'PostgreSQL', 'Git', 'CI/CD', 'MongoDB', 'Redis', 'GitHub Actions', 'Azure'],
         icon: Database,
         color: '#38bdf8',
         gradient: 'from-sky-400 to-indigo-500'
     },
     {
-        title: 'Design',
+        title: 'Design & UX',
         description: "Translating ideas into intuitive, accessible, and engaging user experiences.",
-        skills: ['Figma', 'UI/UX Principles', 'System Design'],
+        skills: ['Figma', 'UI/UX Principles', 'System Design', 'Wireframing', 'Prototyping', 'Responsive Design', 'Accessibility', 'Photoshop', 'Illustrator'],
         icon: Brush,
         color: '#ee8877',
         gradient: 'from-pink-400 to-rose-500'
@@ -334,11 +334,19 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Core Skills',
         description: "Fundamental competencies that strengthen development across all domains.",
-        skills: ['Data Structures', 'Algorithms', 'Testing', 'Agile Methodologies'],
+        skills: ['Data Structures', 'Algorithms', 'Testing', 'Agile Methodologies', 'Problem Solving', 'Version Control', 'Object-Oriented Programming', 'Debugging', 'Software Development Life Cycle (SDLC)', 'Operating Systems', 'Networking', 'Shell Scripting', 'Cloud Computing'],
         icon: Wrench,
         color: '#a3e635',
         gradient: 'from-lime-400 to-green-500'
     },
+    {
+        title: 'AI & Machine Learning',
+        description: "Exploring the intersection of AI and software development to create intelligent applications.",
+        skills: ['Machine Learning', 'Deep Learning', 'Reinforcement Learning', 'Natural Language Processing', 'Scikit-learn', 'Hugging Face', 'NumPy', 'Pandas'],
+        icon: BookOpen,
+        color: '#a78bfa',
+        gradient: 'from-purple-400 to-pink-500'
+    }
 ];
 
 
