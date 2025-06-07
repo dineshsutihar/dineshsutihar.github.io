@@ -10,13 +10,18 @@ import LeetCodeStats from "./LeetCodeStats";
 import { CTAButton } from "./CTAButton";
 import { BlogList } from "./BlogList";
 import SkillsSection from "./SkillsSection";
+import Achievements from "./Achievements";
 
 export const Grid2 = () => {
     return (
         <section id="about" className="grid grid-cols-1 md:grid-cols-5 gap-6">
 
-            <div className="col-span-1 md:col-span-5">
+            <div className="col-span-1 md:col-span-2">
                 <SkillsSection />
+            </div>
+
+            <div className="col-span-1 md:col-span-3">
+                <Achievements />
             </div>
 
             <div className="col-span-1 md:col-span-3">
