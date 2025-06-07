@@ -130,3 +130,25 @@ html {
 body.no-scroll {
   overflow: hidden;
 }
+
+/* .custom-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+} */
+
+/* Thin custom scrollbar */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
