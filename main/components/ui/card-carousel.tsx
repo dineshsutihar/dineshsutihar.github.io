@@ -1,14 +1,12 @@
 "use client"
 
 import React from "react"
-import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
 import "swiper/css/effect-coverflow"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
-import { SparklesIcon } from "lucide-react"
 import { Project } from "@/data"
 import {
   Autoplay,
@@ -17,7 +15,6 @@ import {
   Pagination,
 } from "swiper/modules"
 
-import { Badge } from "@/components/ui/badge"
 import { ProjectCard } from "../ProjectCard"
 
 interface CarouselProps {
