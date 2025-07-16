@@ -5,7 +5,8 @@ import { SiAuth0, SiClerk, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMong
 
 export const navItems = [
     { name: "About", link: "#about" },
-    { name: "Projects", link: "/projects" },
+    // { name: "Projects", link: "/projects" },
+    { name: "Projects", link: "#recent-projects" },
     { name: "Blog", link: "/blog" },
     { name: "Resume", link: "/resume" },
     { name: "Contact", link: "#contact" },
