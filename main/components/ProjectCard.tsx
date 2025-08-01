@@ -11,7 +11,7 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, onClick }) => {
     return (
         <div
-            className="group relative bg-card border border-border rounded-xl overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-primary/30"
+            className="group relative bg-slate-900 border border-slate-700/50 rounded-3xl overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:border-primary/30"
             style={{
                 animationDelay: `${index * 150}ms`,
             }}

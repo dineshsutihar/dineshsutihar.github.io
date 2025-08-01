@@ -1,71 +1,7 @@
 import React from "react";
-import { Trophy, BookOpen, BadgeCheck, ExternalLink } from "lucide-react";
+import { Trophy, ExternalLink } from "lucide-react";
 
-type AchievementItem = {
-    label: string;
-    url: string;
-    details?: string;
-};
-
-type AchievementSection = {
-    name: string;
-    icon: React.ElementType;
-    color: string;
-    items: AchievementItem[];
-};
-
-const sections: AchievementSection[] = [
-    {
-        name: "Research Papers",
-        icon: BookOpen,
-        color: "from-blue-500 to-cyan-500",
-        items: [
-            {
-                label:
-                    "IoT-Driven Smart Classroom System for Efficient Resource Monitoring and Automation",
-                details: "16th International Conference on Recent Engineering & Technology, May 2025",
-                url: "https://example.com/iot-smart-classroom-paper"
-            },
-            {
-                label:
-                    "Advancing Log Analysis and Anomaly Detection with Large Language Models",
-                details: "16th ICCCNT, July 2025",
-                url: "https://example.com/log-analysis-paper"
-            }
-        ]
-    },
-    {
-        name: "Certifications",
-        icon: BadgeCheck,
-        color: "from-yellow-500 to-orange-500",
-        items: [
-            {
-                label: "Meta Front-End Development Professional Certificate (Coursera)",
-                url: "https://www.coursera.org/account/accomplishments/specialization/meta-frontend"
-            },
-            {
-                label: "Oracle SQL Database (Coursera)",
-                url: "https://www.coursera.org/account/accomplishments/certificate/oracle-sql"
-            },
-            {
-                label: "Cybersecurity for Everyone (Coursera)",
-                url: "https://www.coursera.org/account/accomplishments/certificate/cybersecurity-everyone"
-            },
-            {
-                label: "Hands-on to Linux Commands and Shell Scripting (Coursera)",
-                url: "https://www.coursera.org/account/accomplishments/certificate/linux-shell"
-            },
-            {
-                label: "React Basics (Coursera)",
-                url: "https://www.coursera.org/account/accomplishments/certificate/react-basics"
-            },
-            {
-                label: "Advanced CSS (Coursera)",
-                url: "https://www.coursera.org/account/accomplishments/certificate/advanced-css"
-            }
-        ]
-    }
-];
+import { sections } from "@/data/index";
 
 const Achievements = () => {
     return (

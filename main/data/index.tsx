@@ -1,9 +1,5 @@
-import { FaCss3, FaDatabase, FaHtml5, FaLinkedin, FaNodeJs, FaReact, FaTwitter } from "react-icons/fa";
-import { FaArrowsSplitUpAndLeft } from "react-icons/fa6";
-import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
-import { SiAuth0, SiClerk, SiDocker, SiExpress, SiHuggingface, SiMongodb, SiMongoose, SiPostcss, SiPostgresql, SiRender, SiTailwindcss, SiVercel } from "react-icons/si";
-
-import { Cpu, Database, Brush, Server, Wrench } from "lucide-react";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Cpu, Database, Brush, Server, Wrench, BookOpen, BadgeCheck, } from "lucide-react";
 
 export const navItems = [
     { name: "About", link: "#about" },
@@ -306,7 +302,7 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Frontend',
         description: "Crafting beautiful and performant user interfaces with modern frameworks and tools.",
-        skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'JavaScript', 'HTML5', 'CSS3'],
         icon: Cpu,
         color: '#00ffff',
         gradient: 'from-cyan-400 to-blue-500'
@@ -314,7 +310,7 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Backend',
         description: "Building robust server-side logic, APIs, and scalable architectures.",
-        skills: ['Node.js', 'Express', 'Python', 'Go', 'GraphQL'],
+        skills: ['Node.js', 'Express', 'Python', 'Flask', 'Java', 'Spring Boot', 'GraphQL', 'RESTful APIs', 'Microservices Architecture',],
         icon: Server,
         color: '#ff9900',
         gradient: 'from-orange-400 to-red-500'
@@ -322,15 +318,15 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Data & DevOps',
         description: "Managing data pipelines, cloud infrastructure, and deployment automation.",
-        skills: ['AWS', 'Docker', 'PostgreSQL', 'Git', 'CI/CD'],
+        skills: ['AWS', 'Docker', 'PostgreSQL', 'Git', 'CI/CD', 'MongoDB', 'Redis', 'GitHub Actions', 'Azure'],
         icon: Database,
         color: '#38bdf8',
         gradient: 'from-sky-400 to-indigo-500'
     },
     {
-        title: 'Design',
+        title: 'Design & UX',
         description: "Translating ideas into intuitive, accessible, and engaging user experiences.",
-        skills: ['Figma', 'UI/UX Principles', 'System Design'],
+        skills: ['Figma', 'UI/UX Principles', 'System Design', 'Wireframing', 'Prototyping', 'Responsive Design', 'Accessibility', 'Photoshop', 'Illustrator'],
         icon: Brush,
         color: '#ee8877',
         gradient: 'from-pink-400 to-rose-500'
@@ -338,9 +334,92 @@ export const skillCategories: SkillCategory[] = [
     {
         title: 'Core Skills',
         description: "Fundamental competencies that strengthen development across all domains.",
-        skills: ['Data Structures', 'Algorithms', 'Testing', 'Agile Methodologies'],
+        skills: ['Data Structures', 'Algorithms', 'Testing', 'Agile Methodologies', 'Problem Solving', 'Version Control', 'Object-Oriented Programming', 'Debugging', 'Software Development Life Cycle (SDLC)', 'Operating Systems', 'Networking', 'Shell Scripting', 'Cloud Computing'],
         icon: Wrench,
         color: '#a3e635',
         gradient: 'from-lime-400 to-green-500'
     },
+    {
+        title: 'AI & Machine Learning',
+        description: "Exploring the intersection of AI and software development to create intelligent applications.",
+        skills: ['Machine Learning', 'Deep Learning', 'Reinforcement Learning', 'Natural Language Processing', 'Scikit-learn', 'Hugging Face', 'NumPy', 'Pandas'],
+        icon: BookOpen,
+        color: '#a78bfa',
+        gradient: 'from-purple-400 to-pink-500'
+    }
 ];
+
+
+export type AchievementItem = {
+    label: string;
+    url?: string;
+    details?: string;
+};
+
+export type AchievementSection = {
+    name: string;
+    icon: React.ElementType;
+    color: string;
+    items: AchievementItem[];
+};
+
+export const sections: AchievementSection[] = [
+    {
+        name: "Research Papers",
+        icon: BookOpen,
+        color: "from-blue-500 to-cyan-500",
+        items: [
+            {
+                label:
+                    "IoT-Driven Smart Classroom System for Efficient Resource Monitoring and Automation",
+                details: "16th International Conference on Recent Engineering & Technology, May 2025",
+                url: ""
+            },
+            {
+                label:
+                    "Advancing Log Analysis and Anomaly Detection with Large Language Models",
+                details: "16th ICCCNT, July 2025",
+                url: ""
+            }
+        ]
+    },
+    {
+        name: "Certifications",
+        icon: BadgeCheck,
+        color: "from-yellow-500 to-orange-500",
+        items: [
+            {
+                label: "Meta Front-End Development Professional Certificate",
+                url: "https://coursera.org/share/8cd6c873f5904003b9407a261c611169"
+            },
+            {
+                label: "Oracle SQL Database",
+                url: "https://coursera.org/share/ae905a78e35eec69979f0452aba7acaa"
+            },
+            {
+                label: "Cybersecurity for Everyone",
+                url: "https://coursera.org/share/e73b25048927a37a97a60f697a3218de"
+            },
+            {
+                label: "Hands-on to Linux Commands and Shell Scripting",
+                url: "https://coursera.org/share/81040416f4497215d08df0915e11ec7b"
+            },
+            {
+                label: "Supervised Machine Learning: Regression",
+                url: "https://coursera.org/share/a553414fe0f58773816ab1237f34681e"
+            },
+            {
+                label: "Supervised Machine Learning: Classification",
+                url: "https://coursera.org/share/6b724235554352fd23888a4bd395c6e2"
+            },
+            {
+                label: "Explore Machine Learning using Python by Infosys",
+            },
+            {
+                label: "Postman API Fundamentals Student Expert",
+
+            }
+        ]
+    }
+];
+
