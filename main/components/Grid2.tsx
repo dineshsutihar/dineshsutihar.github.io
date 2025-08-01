@@ -9,10 +9,15 @@ import { LeetCodeHeatmap } from "./LeetCodeHeatmap";
 import LeetCodeStats from "./LeetCodeStats";
 import { CTAButton } from "./CTAButton";
 import { BlogList } from "./BlogList";
+import SkillsSection from "./SkillsSection";
 
 export const Grid2 = () => {
     return (
         <section id="about" className="grid grid-cols-1 md:grid-cols-5 gap-6">
+
+            <div className="col-span-1 md:col-span-5">
+                <SkillsSection />
+            </div>
 
             <div className="col-span-1 md:col-span-3">
                 <Timeline details={education} />
