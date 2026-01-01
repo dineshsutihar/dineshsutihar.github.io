@@ -105,7 +105,7 @@ export const LeetCodeHeatmap = () => {
                     </div>
                     <div>
                         <h3 className="text-lg font-bold text-white">LeetCode Activity</h3>
-                        <p className="text-sm text-gray-400">@dineshsutihar</p>
+                        <a href="https://leetcode.com/u/dineshsutihar/" target="_blank" className="text-sm text-gray-400">@dineshsutihar</a>
                     </div>
                 </div>
 
