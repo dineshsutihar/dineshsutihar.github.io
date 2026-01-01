@@ -121,7 +121,7 @@ const LeetCodeStats = () => {
                         </div>
                         <div>
                             <h3 className="text-lg font-bold text-white">LeetCode</h3>
-                            <p className="text-sm text-gray-400">@{username}</p>
+                            <a href={`https://leetcode.com/u/${username}/`} target="_blank" className="text-sm text-gray-400">@{username}</a>
                         </div>
                     </div>
                     <div className="flex gap-2">
