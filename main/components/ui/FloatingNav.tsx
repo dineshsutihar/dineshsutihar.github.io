@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaXmark } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
@@ -46,19 +47,21 @@ export const FloatingNav = ({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ease-in-out ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ease-in-out ${isScrolled
             ? "bg-[#0a0a0a4f] backdrop-blur-md shadow-lg"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1
-            onClick={() => router.push("/")}
-            className="text-2xl font-bold cursor-pointer"
-          >
-            Dinesh
-          </h1>
+          <Link href="/" className="cursor-pointer hover:opacity-80 transition-opacity">
+            <Image
+              src="/Logo-White.svg"
+              alt="Dinesh Logo"
+              width={120}
+              height={40}
+              className="h-8 w-auto"
+            />
+          </Link>
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               {navItems.map((navItem: any, idx: number) => (
@@ -87,9 +90,8 @@ export const FloatingNav = ({
 
       {/* Mobile slide-in menu */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-64 bg-[rgba(0,0,0,0.4)] backdrop-blur-md z-[1000] transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 bottom-0 w-64 bg-[rgba(0,0,0,0.4)] backdrop-blur-md z-[1000] transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="p-4">
           <button
