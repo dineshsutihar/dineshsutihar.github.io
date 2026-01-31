@@ -34,7 +34,7 @@ export const blogs: Blog[] = [
         "title": "Part 1: Low-Level Design Patterns: The Definitive 0→1 Guide for Software Engineers",
         "excerpt": "An exhaustive, industry-grade guide to Low-Level Design patterns. This blog explains every major design pattern in depth, why it exists, when to use it, when NOT to use it, and how senior engineers think about design trade-offs.",
         "author": "Dinesh Sutihar",
-        "publishedAt": "2026-02-01",
+        "publishedAt": "2025-12-14",
         "readingTime": 75,
         "tags": [
             "Low Level Design",
@@ -300,7 +300,7 @@ export const blogs: Blog[] = [
         "title": "Part - 2: Low-Level Design Patterns: The Definitive 0→1 Guide for Software Engineers",
         "author": "Dinesh Sutihar",
         "excerpt": "Deep dive into Structural Design Patterns. Learn how to compose objects and classes to form larger, flexible structures using Adapter, Bridge, Composite, and more.",
-        "publishedAt": "2026-02-08",
+        "publishedAt": "2026-01-20",
         "readingTime": 20,
         "tags": [
             "Low Level Design",
