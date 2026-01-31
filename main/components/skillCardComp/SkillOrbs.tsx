@@ -8,72 +8,62 @@ interface SkillOrbsProps {
     };
     hoveredSkill: string | null;
     setHoveredSkill: (skill: string | null) => void;
+    dimensions: { width: number; height: number };
 }
 
-const SkillOrbs = ({ activeCategory, hoveredSkill, setHoveredSkill }: SkillOrbsProps) => {
+const SkillOrbs = ({ activeCategory, hoveredSkill, setHoveredSkill, dimensions }: SkillOrbsProps) => {
+    const skillCount = activeCategory.skills.length;
+
+    const minDim = Math.min(dimensions.width, dimensions.height);
+
+    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+    const baseRadius = Math.max(100, minDim * 0.15);
+    const maxRadius = Math.min(280, minDim * 0.38);
+
     return (
         <>
             {activeCategory.skills.map((skill, i) => {
-                const angle = (i / activeCategory.skills.length) * Math.PI * 2;
-                const radius = 180;
                 const isHovered = hoveredSkill === skill;
+
+                const angle = i * goldenAngle;
+
+                const progress = skillCount > 1 ? i / (skillCount - 1) : 0;
+                const radius = baseRadius + (maxRadius - baseRadius) * Math.sqrt(progress);
+
+                const offsetX = (Math.cos(angle) * radius / dimensions.width) * 100;
+                const offsetY = (Math.sin(angle) * radius / dimensions.height) * 100;
 
                 return (
                     <motion.div
                         key={`skill-${skill}`}
                         className="absolute z-40 group cursor-pointer"
-                        initial={{
-                            opacity: 0,
-                            scale: 0,
-                            x: '-50%',
-                            y: '-50%',
-                            top: '50%',
-                            left: '50%'
+                        style={{
+                            top: `calc(50% + ${offsetY}%)`,
+                            left: `calc(50% + ${offsetX}%)`,
+                            transform: 'translate(-50%, -50%)'
                         }}
-                        animate={{
-                            opacity: 1,
-                            scale: 1,
-                            top: `calc(50% + ${Math.sin(angle) * radius}px)`,
-                            left: `calc(50% + ${Math.cos(angle) * radius}px)`,
-                        }}
-                        exit={{
-                            opacity: 0,
-                            scale: 0,
-                            top: '50%',
-                            left: '50%'
-                        }}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 120,
-                            damping: 15,
-                            delay: 0.3 + i * 0.1
-                        }}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}
+                        transition={{ type: 'spring', stiffness: 120, damping: 18, delay: 0.04 * i }}
                         onHoverStart={() => setHoveredSkill(skill)}
                         onHoverEnd={() => setHoveredSkill(null)}
-                        whileHover={{ scale: 1.15, y: -5 }}
+                        whileHover={{ scale: 1.2, zIndex: 60 }}
                     >
                         <div
-                            className={`relative px-6 py-3 rounded-full border-2 backdrop-blur-md transition-all duration-300 font-mono ${isHovered
-                                ? 'bg-white/20 border-white/40 shadow-2xl'
-                                : 'bg-slate-800/60 border-white/20'
+                            className={`px-5 py-3 rounded-xl border-2 backdrop-blur-lg font-semibold text-base transition-all duration-200
+                                ${isHovered
+                                    ? 'bg-white/25 border-white/50 shadow-2xl'
+                                    : 'bg-slate-900/70 border-white/20 shadow-lg'
                                 }`}
                             style={{
                                 boxShadow: isHovered
-                                    ? `0 10px 30px ${activeCategory.color}40, 0 0 20px ${activeCategory.color}60`
-                                    : '0 4px 15px rgba(0,0,0,0.3)'
+                                    ? `0 8px 32px ${activeCategory.color}80, 0 0 20px ${activeCategory.color}40`
+                                    : '0 4px 20px rgba(0,0,0,0.4)',
+                                color: isHovered ? '#fff' : 'rgba(255,255,255,0.9)'
                             }}
                         >
-                            <span className={`text-lg font-medium transition-colors ${isHovered ? 'text-white' : 'text-white/90'
-                                }`}>
-                                {skill}
-                            </span>
-
-                            {isHovered && (
-                                <div
-                                    className="absolute inset-0 rounded-full bg-gradient-to-r opacity-20"
-                                    style={{ background: `linear-gradient(45deg, ${activeCategory.color}, transparent)` }}
-                                />
-                            )}
+                            {skill}
                         </div>
                     </motion.div>
                 );
@@ -81,7 +71,6 @@ const SkillOrbs = ({ activeCategory, hoveredSkill, setHoveredSkill }: SkillOrbsP
         </>
     );
 };
-
 
 export default SkillOrbs;
 export type { SkillOrbsProps };

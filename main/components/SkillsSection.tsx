@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Stars from './skillCardComp/Stars';
 import SkillCardNonExpand from './skillCardComp/SkillCardNonExpand';
 import CategoryDetailsPanel from './skillCardComp/CategoryDetails';
-import ConnectionLines from './skillCardComp/ConnectionLine';
 import SkillOrbs from './skillCardComp/SkillOrbs';
 import CategoryNode from './skillCardComp/CategoryNode';
 import { skillCategories } from '@/data/index';
@@ -87,11 +86,9 @@ const SkillsSection = () => {
                         <Stars />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
 
-                        <ConnectionLines
-                            activeCategory={activeCategory}
-                            skillCategories={skillCategories}
-                            dimensions={dimensions}
-                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+
+                        {/* ConnectionLines removed */}
 
                         {/* Close button */}
                         <motion.button
@@ -161,6 +158,7 @@ const SkillsSection = () => {
                                         activeCategory={activeCategory}
                                         hoveredSkill={hoveredSkill}
                                         setHoveredSkill={setHoveredSkill}
+                                        dimensions={dimensions}
                                     />
 
                                     <CategoryDetailsPanel activeCategory={activeCategory} />
