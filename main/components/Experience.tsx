@@ -87,13 +87,15 @@ const Experience = () => {
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
                       {/* Card glow */}
-                      <div className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r transition-all duration-500 blur-lg ${isHovered
-                        ? "from-purple via-violet-500 to-cyan-500 opacity-60"
-                        : "from-purple/30 to-violet-500/30 opacity-0"
+                      {/* Subtle card glow */}
+                      <div className={`absolute -inset-0.5 rounded-2xl bg-gradient-to-r transition-all duration-500 blur-md ${isHovered
+                        ? "from-purple/40 to-violet-500/40 opacity-40"
+                        : "opacity-0"
                         }`} />
 
                       {/* Main Card */}
-                      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl border border-white/10 group-hover:border-purple/40 transition-all duration-300">
+                      {/* Main Card */}
+                      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/95 to-slate-800/95 backdrop-blur-xl border border-white/[0.08] group-hover:border-purple/20 transition-all duration-300">
 
                         {/* Shimmer effect */}
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
@@ -105,7 +107,7 @@ const Experience = () => {
                           {/* Top Row */}
                           <div className="flex items-start gap-4">
                             {/* Company Logo */}
-                            <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-purple/20 to-violet-900/40 border border-purple/30 flex items-center justify-center overflow-hidden group-hover:border-purple/60 transition-colors">
+                            <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-slate-800 to-slate-700/60 border border-white/[0.08] flex items-center justify-center overflow-hidden group-hover:border-purple/30 transition-colors">
                               {exp.thumbnail ? (
                                 <img
                                   src={exp.thumbnail}
@@ -181,8 +183,8 @@ const Experience = () => {
                           )}
                         </div>
 
-                        {/* Bottom accent line */}
-                        <div className="h-1 w-full bg-gradient-to-r from-purple via-violet-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        {/* Subtle bottom accent line */}
+                        <div className="h-0.5 w-full bg-gradient-to-r from-purple/60 to-violet-500/40 opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
                       </div>
                     </motion.div>
                   </div>
