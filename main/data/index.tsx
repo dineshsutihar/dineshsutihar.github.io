@@ -217,35 +217,44 @@ export const education: Education[] = [
     }
 ];
 
-export const workExperience = [
+export interface WorkExperience {
+    id: number;
+    title: string;
+    company: string;
+    startDate: string;
+    endDate?: string;
+    description?: string;
+    highlights?: string[];
+    thumbnail?: string;
+}
+
+export const workExperience: WorkExperience[] = [
     {
         id: 1,
-        title: "Full Stack Developer Intern",
-        desc: "Developed multiple pages like About, Gallery, and Home for a client's website and added CMS functionality at Softtech Engineering Pvt. Ltd.",
-        className: "md:col-span-2",
+        title: "Software Engineer Intern",
+        company: "MotorQ",
+        startDate: "Nov 2025",
+        endDate: "Present",
         thumbnail: "/exp1.svg",
     },
     {
         id: 2,
-        title: "Graphic Design Intern",
-        desc: "Designed posters, banners, and other design assets for Geeta Technical Hub.",
-        className: "md:col-span-2", // change to md:col-span-2
+        title: "Full Stack Developer Intern",
+        company: "Softtech Engineering Pvt. Ltd.",
+        startDate: "Jun 2024",
+        endDate: "Aug 2024",
+        description: "Developed multiple pages like About, Gallery, and Home for a client's website and added CMS functionality.",
         thumbnail: "/exp2.svg",
     },
-    // {
-    //     id: 3,
-    //     title: "Freelance App Dev Project",
-    //     desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    //     className: "md:col-span-2", // change to md:col-span-2
-    //     thumbnail: "/exp3.svg",
-    // },
-    // {
-    //     id: 4,
-    //     title: "Lead Frontend Developer",
-    //     desc: "Developed and maintained user-facing features using modern frontend technologies.",
-    //     className: "md:col-span-2",
-    //     thumbnail: "/exp4.svg",
-    // },
+    {
+        id: 3,
+        title: "Graphic Design Intern",
+        company: "Geeta Technical Hub",
+        startDate: "Jan 2021",
+        endDate: "Mar 2021",
+        description: "Designed posters, banners, and other design assets.",
+        thumbnail: "/exp3.svg",
+    },
 ];
 
 

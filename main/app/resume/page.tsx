@@ -1,65 +1,64 @@
 "use client"
-import { ArrowLeft, Download, ZoomIn, ZoomOut } from 'lucide-react'
+import { ArrowLeft, Download } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 
-export default function Component() {
-    const [zoom, setZoom] = useState(100)
+const ResumeViewer = dynamic(() => import('@/components/ResumeViewer'), {
+    ssr: false,
+    loading: () => (
+        <div className="flex-1 flex flex-col items-center justify-center min-h-[60vh] text-white/60">
+            <div className="w-12 h-12 border-4 border-purple-500/30 border-t-purple-500 rounded-full animate-spin mb-4" />
+            <p>Loading resume...</p>
+        </div>
+    ),
+})
 
-    const handleZoomIn = () => setZoom(prev => Math.min(prev + 10, 200))
-    const handleZoomOut = () => setZoom(prev => Math.max(prev - 10, 50))
-
+export default function ResumePage() {
     return (
-        <main className="relative bg-black min-h-screen flex flex-col mx-auto sm:px-10 px-5 overflow-hidden">
-            <nav className="bg-black text-white py-4">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <div className="text-xl font-bold">Dinesh</div>
-                    <div className="flex items-center space-x-4">
-                        <Link href="/" className="flex items-center text-white hover:text-gray-300">
-                            <ArrowLeft className="mr-1" size={20} />
-                            Home
+        <main className="relative bg-gradient-to-b from-black via-slate-950 to-black min-h-screen flex flex-col">
+            {/* Header Navigation */}
+            <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                    <div className="flex justify-between items-center">
+                        <Link href="/">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                            >
+                                <Image
+                                    src="/Logo-White.svg"
+                                    alt="Dinesh Logo"
+                                    width={120}
+                                    height={40}
+                                    className="h-8 w-auto hover:opacity-80 transition-opacity"
+                                />
+                            </motion.div>
                         </Link>
-                        <a
-                            href="/resume.pdf"
-                            download
-                            className="flex items-center text-white hover:text-gray-300"
-                        >
-                            <Download className="mr-1" size={20} />
-                            Download
-                        </a>
+                        <div className="flex items-center gap-4">
+                            <Link
+                                href="/"
+                                className="flex items-center gap-2 px-4 py-2 text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                            >
+                                <ArrowLeft size={18} />
+                                <span className="hidden sm:inline">Home</span>
+                            </Link>
+                            <a
+                                href="/resume.pdf"
+                                download
+                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg hover:from-purple-500 hover:to-cyan-500 transition-all shadow-lg shadow-purple-500/20"
+                            >
+                                <Download size={18} />
+                                <span className="hidden sm:inline">Download</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
 
-            <div className="flex w-full justify-center mt-8 relative">
-                <div className="absolute top-2 right-2 flex space-x-2 bg-black bg-opacity-50 rounded-md p-1 z-10">
-                    <button
-                        onClick={handleZoomIn}
-                        className="p-1 text-white hover:bg-gray-800 rounded"
-                        aria-label="Zoom in"
-                    >
-                        <ZoomIn size={20} />
-                    </button>
-                    <button
-                        onClick={handleZoomOut}
-                        className="p-1 text-white hover:bg-gray-800 rounded"
-                        aria-label="Zoom out"
-                    >
-                        <ZoomOut size={20} />
-                    </button>
-                </div>
-                <div className="w-full sm:w-[55%] overflow-hidden">
-                    <iframe
-                        src="/resume.pdf#toolbar=0"
-                        // type="application/pdf"
-                        className="w-full h-screen border-0 m-0 p-0 rounded-2xl overflow-hidden bg-transparent"
-                        style={{
-                            transform: `scale(${zoom / 100})`,
-                            transformOrigin: 'top left',
-                        }}
-                    />
-                </div>
-            </div>
+            {/* PDF Viewer Container */}
+            <ResumeViewer />
         </main>
     )
 }

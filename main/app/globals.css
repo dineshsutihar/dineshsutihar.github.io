@@ -131,14 +131,15 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* .custom-scrollbar {
+/* Hidden scrollbar utility */
+.no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar {
   display: none;
-} */
+}
 
 /* Thin custom scrollbar */
 .thin-scrollbar::-webkit-scrollbar {

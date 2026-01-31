@@ -26,14 +26,9 @@ const CategoryNode = ({
     onClick,
     skillCategories
 }: CategoryNodeProps) => {
-    const time = useTime();
-
-    const t = time.get() / 1000;
-    const radius = Math.min(dimensions.width, dimensions.height) * 0.32;
+    const baseRadius = Math.min(dimensions.width, dimensions.height) * 0.35;
+    const radius = index % 2 === 0 ? baseRadius : baseRadius * 0.85;
     const angle = (index / skillCategories.length) * Math.PI * 2;
-
-    const breathingX = Math.cos(t * 0.3 + index) * 15;
-    const breathingY = Math.sin(t * 0.4 + index) * 15;
 
     const baseX = Math.cos(angle) * radius;
     const baseY = Math.sin(angle) * radius;
@@ -48,8 +43,8 @@ const CategoryNode = ({
                 opacity: 0
             }}
             animate={{
-                top: isActive ? '50%' : `calc(50% + ${baseY + breathingY}px)`,
-                left: isActive ? '50%' : `calc(50% + ${baseX + breathingX}px)`,
+                top: isActive ? '50%' : `calc(50% + ${baseY}px)`,
+                left: isActive ? '50%' : `calc(50% + ${baseX}px)`,
                 scale: isOtherNodeActive ? 0.6 : (isActive ? 1.2 : 1),
                 opacity: isOtherNodeActive ? 0.4 : 1,
             }}

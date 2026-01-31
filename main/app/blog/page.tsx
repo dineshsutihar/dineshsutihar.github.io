@@ -1,24 +1,59 @@
-"use client";
-export default function Blog() {
+import { Metadata } from "next";
+import { FloatingNav } from "@/components/ui/FloatingNav";
+import { navItems } from "@/data";
+import Footer from "@/components/Footer";
+import { blogs, getAllCategories } from "@/data/blogs";
+import { BlogPageClient } from "./BlogPageClient";
 
+export const metadata: Metadata = {
+    title: "Tech Blog | Dinesh Sutihar",
+    description: "Insights, tutorials, and deep dives into software development, algorithms, React, Node.js, TypeScript, and modern web technologies.",
+    keywords: [
+        "tech blog",
+        "software development",
+        "react tutorials",
+        "node.js",
+        "typescript",
+        "web development",
+        "programming",
+        "coding tutorials",
+        "data structures",
+        "algorithms"
+    ],
+    openGraph: {
+        title: "Tech Blog | Dinesh Sutihar",
+        description: "Insights, tutorials, and deep dives into software development, algorithms, and modern web technologies.",
+        type: "website",
+        url: "https://dineshsutihar.me/blog",
+        images: [
+            {
+                url: "https://dineshsutihar.me/logo.png",
+                width: 800,
+                height: 600,
+                alt: "Dinesh Sutihar Tech Blog",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Tech Blog | Dinesh Sutihar",
+        description: "Insights, tutorials, and deep dives into software development and modern web technologies.",
+        images: ["https://dineshsutihar.me/logo.png"],
+    },
+};
+
+export default function BlogPage() {
     return (
-        <main>
-            <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
-                <div className="max-w-lg mx-auto space-y-3 text-center">
-                    <h3 className="text-white-800 text-4xl font-semibold sm:text-5xl">
-                        Under Construction
-                    </h3>
-                    <p className="text-gray-600">
-                        Sorry, the page you are looking for is under construction. Please check back later.
-                    </p>
-                    <a onClick={() => window.location.href = '/'} className="text-indigo-600 duration-150 hover:text-indigo-400 font-medium inline-flex items-center gap-x-1 cursor-pointer">
-                        Go back
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                            <path fillRule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clipRule="evenodd" />
-                        </svg>
-                    </a>
+        <main className="relative bg-black-100 flex justify-center items-center flex-col mx-auto sm:px-10 px-5 overflow-clip min-h-screen">
+            <div className="max-w-7xl w-full">
+                <FloatingNav navItems={navItems} />
+
+                <div className="pt-28 pb-16">
+                    <BlogPageClient blogs={blogs} />
                 </div>
+
+                <Footer />
             </div>
         </main>
-    )
+    );
 }
