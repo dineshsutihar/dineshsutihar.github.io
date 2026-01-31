@@ -33,8 +33,7 @@ const Achievements = () => {
                                 </div>
 
                                 <ul
-                                    className={`space-y-4 text-base text-gray-300 pr-2 ${isScrollable ? "max-h-56 overflow-y-auto thin-scrollbar" : ""
-                                        }`}
+                                    className={`space-y-4 text-base text-gray-300 pr-2 ${isScrollable ? "max-h-56 overflow-y-auto no-scrollbar" : ""}`}
                                 >
                                     {section.items.map((item, idx) => (
                                         <li key={idx} className="flex flex-col gap-1">

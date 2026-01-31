@@ -112,18 +112,9 @@ const RecentCommits = () => {
 
                 {/* Commits List with Timeline */}
                 <div
-                    className="flex-1 overflow-y-auto pr-1"
-                    style={{
-                        maxHeight: '380px',
-                        scrollbarWidth: 'none',  /* Firefox */
-                        msOverflowStyle: 'none'  /* IE and Edge */
-                    }}
+                    className="flex-1 overflow-y-auto pr-1 no-scrollbar"
+                    style={{ maxHeight: '380px' }}
                 >
-                    <style jsx>{`
-                        div::-webkit-scrollbar {
-                            display: none;
-                        }
-                    `}</style>
                     {loading ? (
                         <div className="flex items-center justify-center py-12">
                             <div className="w-5 h-5 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
